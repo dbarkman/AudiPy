@@ -12,7 +12,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from audible import Authenticator, Client
 from rich.console import Console
-from crypto_utils_simple import get_crypto_instance
+from utils.crypto_utils_simple import get_crypto_instance
 
 # Initialize rich console
 console = Console()

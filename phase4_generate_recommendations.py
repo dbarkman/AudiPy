@@ -12,7 +12,7 @@ from audible import Authenticator, Client
 from rich.console import Console
 from rich.progress import Progress, track
 from rich.table import Table
-from crypto_utils_simple import get_crypto_instance
+from utils.crypto_utils_simple import get_crypto_instance
 
 # Initialize rich console
 console = Console()
