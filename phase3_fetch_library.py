@@ -7,13 +7,12 @@ Fetches user's Audible library and stores it in the database
 import os
 import json
 import mysql.connector
-import base64
 from datetime import datetime
 from dotenv import load_dotenv
 from audible import Authenticator, Client
 from rich.console import Console
 from rich.progress import Progress, track
-from cryptography.fernet import Fernet
+from crypto_utils_simple import get_crypto_instance
 
 # Initialize rich console
 console = Console()
@@ -33,13 +32,8 @@ class LibraryFetcher:
             'autocommit': True
         }
         
-        # Encryption key for decrypting tokens
-        self.encryption_key = os.getenv('ENCRYPTION_KEY')
-        if not self.encryption_key:
-            console.print("[red]❌ ENCRYPTION_KEY not found in .env file[/]")
-            exit(1)
-        
-        self.fernet = Fernet(self.encryption_key.encode() if isinstance(self.encryption_key, str) else self.encryption_key)
+        # Initialize crypto utilities
+        self.crypto = get_crypto_instance()
         
         self.user_id = None
         self.user_preferences = {}
@@ -108,6 +102,8 @@ class LibraryFetcher:
             cursor.execute("""
                 SELECT encrypted_auth_data, marketplace FROM user_audible_accounts 
                 WHERE user_id = %s
+                ORDER BY created_at DESC
+                LIMIT 1
             """, (self.user_id,))
             
             result = cursor.fetchone()
@@ -115,20 +111,35 @@ class LibraryFetcher:
                 console.print("[red]❌ No Audible tokens found. Please run Phase 1 (authentication) first.[/]")
                 return False
             
-            # Decrypt the authentication data
-            encrypted_b64 = result[0]
-            encrypted_data = base64.b64decode(encrypted_b64.encode())
-            decrypted_json = self.fernet.decrypt(encrypted_data).decode()
+            # Consume any remaining results
+            cursor.fetchall()
+            
+            # Decrypt the authentication data for this user
+            encrypted_data = result[0]
+            decrypted_json = self.crypto.decrypt_for_user(self.user_id, encrypted_data)
             auth_data = json.loads(decrypted_json)
             
-            # Recreate the authenticator
-            auth = Authenticator(
-                access_token=auth_data['access_token'],
-                refresh_token=auth_data['refresh_token'],
-                device_info=auth_data['device_info'],
-                customer_info=auth_data['customer_info'],
-                locale=auth_data['locale']
-            )
+            # Debug: Check token expiration
+            expires_timestamp = auth_data.get('expires')
+            if expires_timestamp:
+                from datetime import datetime
+                expires_date = datetime.fromtimestamp(expires_timestamp)
+                current_time = datetime.now()
+                console.print(f"[dim]Debug: Tokens expire at: {expires_date}[/]")
+                console.print(f"[dim]Debug: Current time: {current_time}[/]")
+                console.print(f"[dim]Debug: Tokens expired: {current_time > expires_date}[/]")
+            
+            # Recreate the authenticator from stored data
+            auth = Authenticator.from_dict(auth_data)
+            
+            # Try to refresh tokens if they're expired
+            try:
+                if expires_timestamp and datetime.now().timestamp() > expires_timestamp:
+                    console.print("[yellow]🔄 Tokens expired, attempting refresh...[/]")
+                    auth.refresh_access_token()
+                    console.print("[green]✅ Tokens refreshed successfully[/]")
+            except Exception as refresh_error:
+                console.print(f"[yellow]⚠️ Token refresh failed: {refresh_error}[/]")
             
             self.client = Client(auth=auth)
             console.print("[green]✅ Audible client authenticated[/]")
@@ -161,7 +172,7 @@ class LibraryFetcher:
 
     def store_book(self, book_data):
         """Store a single book in the database"""
-        cursor = self.db.cursor()
+        cursor = self.db.cursor(buffered=True)
         
         try:
             # Extract basic book information
@@ -173,6 +184,9 @@ class LibraryFetcher:
             book_language = book_data.get('language', '').lower()
             if book_language != self.user_preferences['language']:
                 return None
+            
+            # Parse publication datetime
+            publication_datetime = self._parse_datetime(book_data.get('publication_datetime'))
             
             # Insert/update book
             cursor.execute("""
@@ -197,7 +211,7 @@ class LibraryFetcher:
                 book_data.get('title', ''),
                 book_data.get('subtitle'),
                 book_data.get('publisher_name'),
-                book_data.get('publication_datetime'),
+                publication_datetime,
                 book_language,
                 book_data.get('content_type'),
                 book_data.get('runtime_length_min'),
@@ -207,7 +221,8 @@ class LibraryFetcher:
             
             # Get book ID
             cursor.execute("SELECT id FROM books WHERE asin = %s", (asin,))
-            book_id = cursor.fetchone()[0]
+            result = cursor.fetchone()
+            book_id = result[0]
             
             # Store authors
             authors = book_data.get('authors', []) or []
@@ -221,7 +236,8 @@ class LibraryFetcher:
                     """, (author_name, author.get('asin')))
                     
                     cursor.execute("SELECT id FROM authors WHERE name = %s", (author_name,))
-                    author_id = cursor.fetchone()[0]
+                    result = cursor.fetchone()
+                    author_id = result[0]
                     
                     # Link book to author
                     cursor.execute("""
@@ -241,7 +257,8 @@ class LibraryFetcher:
                     """, (narrator_name, narrator.get('asin')))
                     
                     cursor.execute("SELECT id FROM narrators WHERE name = %s", (narrator_name,))
-                    narrator_id = cursor.fetchone()[0]
+                    result = cursor.fetchone()
+                    narrator_id = result[0]
                     
                     # Link book to narrator
                     cursor.execute("""
@@ -261,7 +278,8 @@ class LibraryFetcher:
                     """, (series_title, series.get('asin')))
                     
                     cursor.execute("SELECT id FROM series WHERE title = %s", (series_title,))
-                    series_id = cursor.fetchone()[0]
+                    result = cursor.fetchone()
+                    series_id = result[0]
                     
                     # Link book to series
                     sequence = series.get('sequence')
@@ -271,12 +289,7 @@ class LibraryFetcher:
                     """, (book_id, series_id, sequence, str(sequence) if sequence else None))
             
             # Store user library entry
-            purchase_date = book_data.get('purchase_date')
-            if isinstance(purchase_date, str):
-                try:
-                    purchase_date = datetime.fromisoformat(purchase_date.replace('Z', '+00:00'))
-                except:
-                    purchase_date = None
+            purchase_date = self._parse_datetime(book_data.get('purchase_date'))
             
             cursor.execute("""
                 INSERT INTO user_libraries (
@@ -303,6 +316,31 @@ class LibraryFetcher:
             return None
         finally:
             cursor.close()
+
+    def _parse_datetime(self, datetime_str):
+        """Parse datetime string from Audible API to MySQL-compatible format"""
+        if not datetime_str:
+            return None
+        
+        try:
+            # Handle ISO format with 'Z' timezone suffix
+            if isinstance(datetime_str, str):
+                # Replace 'Z' with '+00:00' for proper ISO parsing
+                if datetime_str.endswith('Z'):
+                    datetime_str = datetime_str[:-1] + '+00:00'
+                
+                # Parse the datetime
+                from datetime import datetime
+                dt = datetime.fromisoformat(datetime_str)
+                
+                # Return in MySQL-compatible format (without timezone info)
+                return dt.replace(tzinfo=None)
+            
+            return datetime_str
+            
+        except Exception as e:
+            console.print(f"[yellow]⚠️ Failed to parse datetime '{datetime_str}': {e}[/]")
+            return None
 
     def store_library(self):
         """Store all library books in database"""

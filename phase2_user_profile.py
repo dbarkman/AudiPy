@@ -73,6 +73,7 @@ class UserProfileSetup:
         cursor = self.db.cursor()
         
         try:
+            # First try to get existing preferences
             cursor.execute("""
                 SELECT max_price, preferred_language, marketplace, currency,
                        notifications_enabled, price_alert_enabled, new_release_alerts
@@ -94,17 +95,26 @@ class UserProfileSetup:
                 console.print("[blue]📋 Found existing preferences[/]")
                 return True
             else:
-                # Set defaults
+                # No preferences yet, get marketplace from Audible account (Phase 1)
+                cursor.execute("""
+                    SELECT marketplace FROM user_audible_accounts 
+                    WHERE user_id = %s
+                """, (self.user_id,))
+                
+                audible_result = cursor.fetchone()
+                default_marketplace = audible_result[0] if audible_result else 'us'
+                
+                # Set defaults using marketplace from authentication
                 self.current_preferences = {
                     'max_price': 12.66,
                     'preferred_language': 'english',
-                    'marketplace': 'us',
-                    'currency': 'USD',
+                    'marketplace': default_marketplace,
+                    'currency': self._get_currency_for_marketplace(default_marketplace),
                     'notifications_enabled': True,
                     'price_alert_enabled': True,
                     'new_release_alerts': True
                 }
-                console.print("[blue]📋 No existing preferences found, using defaults[/]")
+                console.print(f"[blue]📋 No existing preferences found, using defaults with marketplace from auth: {default_marketplace}[/]")
                 return True
                 
         except Exception as e:
@@ -112,6 +122,14 @@ class UserProfileSetup:
             return False
         finally:
             cursor.close()
+
+    def _get_currency_for_marketplace(self, marketplace):
+        """Get currency for marketplace"""
+        currency_map = {
+            'us': 'USD', 'ca': 'CAD', 'uk': 'GBP', 'de': 'EUR', 
+            'fr': 'EUR', 'it': 'EUR', 'au': 'AUD', 'in': 'INR', 'jp': 'JPY'
+        }
+        return currency_map.get(marketplace, 'USD')
 
     def display_current_preferences(self):
         """Display current preferences in a nice table"""
@@ -195,7 +213,7 @@ class UserProfileSetup:
         
         # Marketplace
         console.print(f"\n[cyan]🏪 Marketplace[/]")
-        console.print("[dim]Your Audible marketplace region[/]")
+        console.print("[dim]Your preferred Audible marketplace for browsing and pricing[/]")
         marketplace_options = ["us", "uk", "de", "fr", "au", "ca", "in", "it", "jp"]
         marketplace = Prompt.ask(
             "Marketplace",

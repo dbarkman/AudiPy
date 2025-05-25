@@ -7,13 +7,12 @@ Generates static recommendations based on user's library and stores them in data
 import os
 import json
 import mysql.connector
-import base64
 from dotenv import load_dotenv
 from audible import Authenticator, Client
 from rich.console import Console
 from rich.progress import Progress, track
 from rich.table import Table
-from cryptography.fernet import Fernet
+from crypto_utils_simple import get_crypto_instance
 
 # Initialize rich console
 console = Console()
@@ -33,13 +32,8 @@ class RecommendationGenerator:
             'autocommit': True
         }
         
-        # Encryption key for decrypting tokens
-        self.encryption_key = os.getenv('ENCRYPTION_KEY')
-        if not self.encryption_key:
-            console.print("[red]❌ ENCRYPTION_KEY not found in .env file[/]")
-            exit(1)
-        
-        self.fernet = Fernet(self.encryption_key.encode() if isinstance(self.encryption_key, str) else self.encryption_key)
+        # Initialize crypto utilities
+        self.crypto = get_crypto_instance()
         
         self.user_id = None
         self.user_preferences = {}
@@ -111,12 +105,14 @@ class RecommendationGenerator:
 
     def load_audible_client(self):
         """Load and decrypt Audible authentication tokens"""
-        cursor = self.db.cursor()
+        cursor = self.db.cursor(buffered=True)
         
         try:
             cursor.execute("""
                 SELECT encrypted_auth_data FROM user_audible_accounts 
                 WHERE user_id = %s
+                ORDER BY created_at DESC
+                LIMIT 1
             """, (self.user_id,))
             
             result = cursor.fetchone()
@@ -124,20 +120,13 @@ class RecommendationGenerator:
                 console.print("[red]❌ No Audible tokens found. Please run Phase 1 (authentication) first.[/]")
                 return False
             
-            # Decrypt the authentication data
-            encrypted_b64 = result[0]
-            encrypted_data = base64.b64decode(encrypted_b64.encode())
-            decrypted_json = self.fernet.decrypt(encrypted_data).decode()
+            # Decrypt the authentication data for this user
+            encrypted_data = result[0]
+            decrypted_json = self.crypto.decrypt_for_user(self.user_id, encrypted_data)
             auth_data = json.loads(decrypted_json)
             
-            # Recreate the authenticator
-            auth = Authenticator(
-                access_token=auth_data['access_token'],
-                refresh_token=auth_data['refresh_token'],
-                device_info=auth_data['device_info'],
-                customer_info=auth_data['customer_info'],
-                locale=auth_data['locale']
-            )
+            # Recreate the authenticator from stored data
+            auth = Authenticator.from_dict(auth_data)
             
             self.client = Client(auth=auth)
             console.print("[green]✅ Audible client authenticated[/]")
@@ -395,13 +384,13 @@ class RecommendationGenerator:
             # Store recommendation
             cursor.execute("""
                 INSERT INTO user_recommendations (
-                    user_id, book_id, recommendation_type, recommendation_source,
+                    user_id, book_id, suggestion_type, source_name,
                     confidence_score, purchase_method
                 ) VALUES (%s, %s, %s, %s, %s, %s)
                 ON DUPLICATE KEY UPDATE
                 confidence_score = VALUES(confidence_score),
                 purchase_method = VALUES(purchase_method),
-                updated_at = CURRENT_TIMESTAMP
+                generated_at = CURRENT_TIMESTAMP
             """, (
                 self.user_id, book_id, recommendation_type, source_name,
                 confidence_score, purchase_method
@@ -577,12 +566,12 @@ class RecommendationGenerator:
         try:
             cursor.execute("""
                 SELECT 
-                    recommendation_type,
+                    suggestion_type,
                     COUNT(*) as count,
                     AVG(confidence_score) as avg_confidence
                 FROM user_recommendations 
                 WHERE user_id = %s
-                GROUP BY recommendation_type
+                GROUP BY suggestion_type
                 ORDER BY count DESC
             """, (self.user_id,))
             

@@ -7,12 +7,12 @@ Authenticates with Audible and stores encrypted tokens in database
 import os
 import json
 import mysql.connector
+import getpass
 from pathlib import Path
 from dotenv import load_dotenv
 from audible import Authenticator, Client
 from rich.console import Console
-from cryptography.fernet import Fernet
-import base64
+from crypto_utils_simple import get_crypto_instance
 
 # Initialize rich console
 console = Console()
@@ -32,15 +32,8 @@ class AudibleAuthenticator:
             'autocommit': True
         }
         
-        # Encryption key for storing tokens
-        self.encryption_key = os.getenv('ENCRYPTION_KEY')
-        if not self.encryption_key:
-            # Generate a new key if none exists
-            self.encryption_key = Fernet.generate_key().decode()
-            console.print(f"[yellow]Generated new encryption key. Add this to your .env file:[/]")
-            console.print(f"[yellow]ENCRYPTION_KEY={self.encryption_key}[/]")
-        
-        self.fernet = Fernet(self.encryption_key.encode() if isinstance(self.encryption_key, str) else self.encryption_key)
+        # Initialize crypto utilities
+        self.crypto = get_crypto_instance()
         
         self.auth = None
         self.client = None
@@ -62,7 +55,8 @@ class AudibleAuthenticator:
         console.print("[dim]Enter your Audible account credentials[/]")
         
         username = input("Username/Email: ").strip()
-        password = input("Password: ").strip()
+        password = getpass.getpass("Password (not saved in our database): ").strip()
+        console.print("[dim]Marketplace is required for authentication (you can update it in preferences later)[/]")
         marketplace = input("Marketplace (us/uk/de/fr/etc) [us]: ").strip() or 'us'
         
         return username, password, marketplace
@@ -88,7 +82,7 @@ class AudibleAuthenticator:
             if "OTP" in str(e) or "captcha" in str(e).lower():
                 # If OTP is required
                 console.print("[yellow]📱 Two-factor authentication required[/]")
-                otp = input("Enter OTP code: ").strip()
+                otp = getpass.getpass("Enter OTP code: ").strip()
                 
                 try:
                     # Retry authentication with OTP
@@ -153,6 +147,60 @@ class AudibleAuthenticator:
         finally:
             cursor.close()
 
+    def _format_expires_date(self, expires):
+        """Format expiration date to ISO string, handling different input types"""
+        console.print(f"[dim]Debug: expires type: {type(expires)}, value: {expires}[/]")
+        
+        if expires is None:
+            return None
+        
+        # If it's already a string, return as-is
+        if isinstance(expires, str):
+            return expires
+        
+        # If it's a datetime object, convert to ISO format
+        if hasattr(expires, 'isoformat'):
+            return expires.isoformat()
+        
+        # If it's a float/int timestamp, convert to datetime then ISO
+        if isinstance(expires, (int, float)):
+            from datetime import datetime
+            try:
+                dt = datetime.fromtimestamp(expires)
+                return dt.isoformat()
+            except (ValueError, OSError):
+                # If timestamp conversion fails, return None
+                return None
+        
+        # For any other type, try to convert to string
+        return str(expires)
+
+    def _make_json_safe(self, obj):
+        """Convert object to JSON-safe format"""
+        if obj is None:
+            return None
+        
+        # If it's already a basic type, return as-is
+        if isinstance(obj, (str, int, float, bool, list, dict)):
+            return obj
+        
+        # If it's a dict-like object, try to convert to dict
+        if hasattr(obj, '__dict__'):
+            try:
+                return obj.__dict__
+            except:
+                pass
+        
+        # If it has a to_dict method, use it
+        if hasattr(obj, 'to_dict'):
+            try:
+                return obj.to_dict()
+            except:
+                pass
+        
+        # Otherwise convert to string
+        return str(obj)
+
     def store_audible_tokens(self, marketplace):
         """Store encrypted Audible authentication tokens"""
         if not self.auth or not self.user_id:
@@ -160,20 +208,33 @@ class AudibleAuthenticator:
             return False
         
         try:
-            # Extract authentication data
+            # Debug: Check what we have in the auth object
+            console.print(f"[dim]Debug: auth.locale type: {type(self.auth.locale)}[/]")
+            console.print(f"[dim]Debug: auth.expires type: {type(self.auth.expires)}[/]")
+            
+            # Extract complete authentication data (all fields needed by Authenticator.from_dict)
             auth_data = {
+                'website_cookies': self._make_json_safe(self.auth.website_cookies),
+                'adp_token': self.auth.adp_token,
                 'access_token': self.auth.access_token,
                 'refresh_token': self.auth.refresh_token,
-                'device_info': self.auth.device_info,
-                'customer_info': self.auth.customer_info,
-                'expires_at': self.auth.expires.isoformat() if self.auth.expires else None,
-                'locale': self.auth.locale
+                'device_private_key': self.auth.device_private_key,
+                'store_authentication_cookie': self._make_json_safe(self.auth.store_authentication_cookie),
+                'device_info': self._make_json_safe(self.auth.device_info),
+                'customer_info': self._make_json_safe(self.auth.customer_info),
+                'expires': self.auth.expires,
+                'locale_code': marketplace,  # Store the marketplace code, not the Locale object
+                'with_username': getattr(self.auth, 'with_username', False),
+                'activation_bytes': getattr(self.auth, 'activation_bytes', None)
             }
             
-            # Encrypt the authentication data
+            # Debug output
+            console.print(f"[dim]Debug: Storing auth data with locale_code: {auth_data['locale_code']}[/]")
+            console.print(f"[dim]Debug: Expires at: {auth_data['expires']}[/]")
+            
+            # Encrypt the authentication data for this specific user
             auth_json = json.dumps(auth_data)
-            encrypted_data = self.fernet.encrypt(auth_json.encode())
-            encrypted_b64 = base64.b64encode(encrypted_data).decode()
+            encrypted_data = self.crypto.encrypt_for_user(self.user_id, auth_json)
             
             # Store in database
             cursor = self.db.cursor()
@@ -188,9 +249,9 @@ class AudibleAuthenticator:
                 updated_at = CURRENT_TIMESTAMP
             """, (
                 self.user_id,
-                encrypted_b64,
+                encrypted_data,
                 marketplace,
-                auth_data.get('expires_at')
+                self._format_expires_date(auth_data.get('expires'))
             ))
             
             cursor.close()
@@ -207,11 +268,16 @@ class AudibleAuthenticator:
         
         try:
             # Make a simple API call to verify authentication
-            profile = self.client.get("1.0/customer/information")
+            # Use a basic library call instead of customer info
+            library_test = self.client.get(
+                "1.0/library",
+                num_results=1,
+                response_groups="product_desc"
+            )
             
-            if profile:
-                customer_name = profile.get('name', 'Unknown')
-                console.print(f"[green]✅ API access confirmed for: {customer_name}[/]")
+            if library_test:
+                total_size = library_test.get('total_size', 0)
+                console.print(f"[green]✅ API access confirmed! Library has {total_size} books[/]")
                 return True
             else:
                 console.print("[red]❌ API access test failed[/]")
