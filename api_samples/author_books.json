@@ -1,0 +1,530 @@
+{
+  "product_filters": [],
+  "products": [
+    {
+      "asin": "B0DT7HY6R7",
+      "authors": [
+        {
+          "asin": "B001IGJOCA",
+          "name": "John Scalzi"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-09-16",
+      "language": "english",
+      "merchandising_summary": "<p>The peace is shattering.</p>",
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 29.950000762939453,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 20.959999084472656,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.46999979019165,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/4155qzu469L._SL500_.jpg"
+      },
+      "publication_datetime": "2025-09-16T07:00:00Z",
+      "publication_name": "Old Man\u2019s War",
+      "publisher_name": "Audible Studios",
+      "release_date": "2025-09-16",
+      "series": [
+        {
+          "asin": "B0073XG3JE",
+          "sequence": "7",
+          "title": "Old Man\u2019s War",
+          "url": "/pd/The-Old-Mans-War-Series-Audiobook/B0073XG3JE"
+        }
+      ],
+      "sku": "BK_ADBL_025672",
+      "sku_lite": "BK_ADBL_025672",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/4155qzu469L._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C4155qzu469L.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/4155qzu469L._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/4155qzu469L._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C4155qzu469L.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBThe%20Shattering%20Peace,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBJohn%20Scalzi,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C4155qzu469L.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAThe%20Shattering%20...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20John%20Scalzi,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/4155qzu469L._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C4155qzu469L.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "Old Man's War, Book 7",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "The Shattering Peace",
+      "voice_description": "American English"
+    },
+    {
+      "asin": "B0DFMY94G6",
+      "authors": [
+        {
+          "asin": "B001IGJOCA",
+          "name": "John Scalzi"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-03-25",
+      "language": "english",
+      "merchandising_summary": "<p><i>New York Times</i> bestseller John Scalzi flies you to the moon with his most fantastic tale to date: <i>When the Moon Hits Your Eye</i></p>",
+      "narrators": [
+        {
+          "name": "Wil Wheaton"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 33.900001525878906,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 23.729999542236328,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51zdS5z+NHL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-03-25T07:00:00Z",
+      "publisher_name": "Audible Studios",
+      "release_date": "2025-03-25",
+      "runtime_length_min": 605,
+      "sku": "BK_ADBL_025670",
+      "sku_lite": "BK_ADBL_025670",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51zdS5z+NHL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51zdS5z+NHL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51zdS5z+NHL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51zdS5z+NHL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51zdS5z+NHL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBWhen%20the%20Moon%20Hits%20Your...,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBJohn%20Scalzi,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51zdS5z+NHL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAWhen%20the%20Moon%20H...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20John%20Scalzi,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51zdS5z+NHL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51zdS5z+NHL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "When the Moon Hits Your Eye",
+      "voice_description": "American English"
+    },
+    {
+      "asin": "B01KKPH1VA",
+      "authors": [
+        {
+          "asin": "B001IGJOCA",
+          "name": "John Scalzi"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "format4",
+          "format": "Format4",
+          "is_kindle_enhanced": false,
+          "name": "format4"
+        },
+        {
+          "enhanced_codec": "mp42264",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "mp4_22_64"
+        },
+        {
+          "enhanced_codec": "piff2232",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "piff_22_32"
+        },
+        {
+          "enhanced_codec": "piff2264",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "piff_22_64"
+        },
+        {
+          "enhanced_codec": "mp42232",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "mp4_22_32"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2016-10-04",
+      "language": "english",
+      "merchandising_summary": "One day, not long from now, it becomes almost impossible to murder anyone - 999 times out of a thousand, anyone who is intentionally killed comes back....",
+      "narrators": [
+        {
+          "name": "Zachary Quinto"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 7.949999809265137,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 5.559999942779541,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 1.9900000095367432,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51m35+cvJYL._SL500_.jpg"
+      },
+      "program_participation": "Audible Original",
+      "publication_datetime": "2016-10-04T07:00:00Z",
+      "publication_name": "The Dispatcher",
+      "publisher_name": "Audible Originals",
+      "release_date": "2016-10-04",
+      "runtime_length_min": 138,
+      "series": [
+        {
+          "asin": "B08HNDYJGJ",
+          "sequence": "1",
+          "title": "The Dispatcher",
+          "url": "/pd/The-Dispatcher-Audiobook/B08HNDYJGJ"
+        }
+      ],
+      "sku": "BK_ADBL_022974",
+      "sku_lite": "BK_ADBL_022974",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51m35+cvJYL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51m35+cvJYL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51m35+cvJYL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51m35+cvJYL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51m35+cvJYL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBThe%20Dispatcher,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBJohn%20Scalzi,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51m35+cvJYL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAThe%20Dispatcher,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20John%20Scalzi,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51m35+cvJYL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51m35+cvJYL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "thesaurus_subject_keywords": [
+        "audible_original",
+        "la_confidential",
+        "literature-and-fiction"
+      ],
+      "title": "The Dispatcher"
+    },
+    {
+      "asin": "B0DH9G4XSV",
+      "authors": [
+        {
+          "asin": "B001IGJOCA",
+          "name": "John Scalzi"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "original_recording",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2024-10-03",
+      "language": "english",
+      "merchandising_summary": "<p>The aliens are here ... and they want municipal services!</p>",
+      "narrators": [
+        {
+          "name": "Amber Benson"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 14.949999809265137,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 7.989999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "sale"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.46999979019165,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51Na9UUNDML._SL500_.jpg"
+      },
+      "program_participation": "Audible Original",
+      "publication_datetime": "2024-10-03T07:00:00Z",
+      "publisher_name": "Audible Originals",
+      "release_date": "2024-10-03",
+      "runtime_length_min": 150,
+      "sku": "OR_ORIG_002712",
+      "sku_lite": "OR_ORIG_002712",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51Na9UUNDML._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51Na9UUNDML.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51Na9UUNDML._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51Na9UUNDML._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51Na9UUNDML.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBConstituent%20Service,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBJohn%20Scalzi,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51Na9UUNDML.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAConstituent%20Ser...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20John%20Scalzi,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51Na9UUNDML._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51Na9UUNDML.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "A Third District Story",
+      "thesaurus_subject_keywords": [
+        "audible_original",
+        "literature-and-fiction"
+      ],
+      "title": "Constituent Service",
+      "voice_description": "American English"
+    },
+    {
+      "asin": "B098G33RYH",
+      "authors": [
+        {
+          "asin": "B001IGJOCA",
+          "name": "John Scalzi"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "format4",
+          "format": "Format4",
+          "is_kindle_enhanced": false,
+          "name": "format4"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "mp42232",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "mp4_22_32"
+        },
+        {
+          "enhanced_codec": "mp44464",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "mp4_44_64"
+        },
+        {
+          "enhanced_codec": "mp444128",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "mp4_44_128"
+        },
+        {
+          "enhanced_codec": "mp42264",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "mp4_22_64"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2022-03-15",
+      "language": "english",
+      "merchandising_summary": "<p>When COVID-19 sweeps through New York City, Jamie Gray is stuck as a dead-end driver for food-delivery apps. That is, until Jamie makes a delivery to an old acquaintance, Tom, who works at what he calls \u201can animal rights organization\u201d....</p>",
+      "narrators": [
+        {
+          "name": "Wil Wheaton"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 29.950000762939453,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 20.959999084472656,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/516e5jlTKlL._SL500_.jpg"
+      },
+      "publication_datetime": "2022-03-15T07:00:00Z",
+      "publisher_name": "Audible Studios",
+      "release_date": "2022-03-15",
+      "runtime_length_min": 482,
+      "sku": "BK_ADBL_025669",
+      "sku_lite": "BK_ADBL_025669",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/516e5jlTKlL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C516e5jlTKlL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/516e5jlTKlL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/516e5jlTKlL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C516e5jlTKlL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBThe%20Kaiju%20Preservation%20...,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBJohn%20Scalzi,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C516e5jlTKlL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAThe%20Kaiju%20Prese...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20John%20Scalzi,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/516e5jlTKlL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C516e5jlTKlL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "The Kaiju Preservation Society"
+    }
+  ],
+  "response_groups": [
+    "product_desc",
+    "always-returned",
+    "contributors",
+    "series",
+    "price",
+    "media"
+  ],
+  "total_results": 78
+}
