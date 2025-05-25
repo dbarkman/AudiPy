@@ -73,7 +73,7 @@ function App() {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        AudiPy
+        NextBookFinder
       </Typography>
       <List>
         {navigationItems.map((item) => (
@@ -116,7 +116,7 @@ function App() {
             component="div"
             sx={{ flexGrow: 1, fontWeight: 600 }}
           >
-            AudiPy
+            NextBookFinder
           </Typography>
           
           {isMobile ? (
@@ -272,7 +272,7 @@ function App() {
       >
         <Container>
           <Typography variant="body2" sx={{ opacity: 0.8 }}>
-            © 2024 AudiPy. A free tool for Audible enthusiasts.
+            © 2024 NextBookFinder. A free tool for Audible enthusiasts.
           </Typography>
           <Typography variant="body2" sx={{ opacity: 0.6, mt: 1 }}>
             Not affiliated with Audible or Amazon. Built with ❤️ for audiobook lovers.
