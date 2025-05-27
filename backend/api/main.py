@@ -117,8 +117,41 @@ class BookDetailResponse(BaseModel):
     categories: List[str] = []
     publisher: Optional[str] = None
 
+# Recommendation models
+class RecommendationBook(BaseModel):
+    asin: str
+    title: str
+    subtitle: Optional[str] = None
+    authors: List[str] = []
+    narrators: List[str] = []
+    series: Optional[str] = None
+    runtime_length_min: Optional[int] = None
+    language: Optional[str] = None
+    cover_url: Optional[str] = None
+    recommendation_type: str
+    source_name: str
+    confidence_score: float
+    purchase_method: str
+    generated_at: str
+
+class RecommendationsResponse(BaseModel):
+    recommendations: List[RecommendationBook]
+    total_count: int
+    page: int
+    page_size: int
+    has_next: bool
+
+class GenerationStatusResponse(BaseModel):
+    is_generating: bool
+    last_generated: Optional[str] = None
+    total_recommendations: int
+    status_message: str
+
 # Per-user sync status tracking
 user_sync_status = {}
+
+# Per-user recommendation generation status tracking
+user_recommendation_status = {}
 
 def get_user_sync_status(user_id: int) -> dict:
     """Get sync status for a specific user"""
@@ -134,6 +167,22 @@ def get_user_sync_status(user_id: int) -> dict:
 def set_user_sync_status(user_id: int, **kwargs) -> None:
     """Update sync status for a specific user"""
     status = get_user_sync_status(user_id)
+    status.update(kwargs)
+
+def get_user_recommendation_status(user_id: int) -> dict:
+    """Get recommendation generation status for a specific user"""
+    if user_id not in user_recommendation_status:
+        user_recommendation_status[user_id] = {
+            "is_generating": False,
+            "last_generated": None,
+            "total_recommendations": 0,
+            "status_message": "Ready to generate recommendations"
+        }
+    return user_recommendation_status[user_id]
+
+def set_user_recommendation_status(user_id: int, **kwargs) -> None:
+    """Update recommendation generation status for a specific user"""
+    status = get_user_recommendation_status(user_id)
     status.update(kwargs)
 
 # Helper functions
@@ -874,6 +923,196 @@ async def get_book_details(book_asin: str, request: Request):
 app.include_router(api_router)
 
 # Legacy endpoints (keeping for backward compatibility)
+# Phase 4: Recommendations endpoints
+@api_router.get("/recommendations", response_model=RecommendationsResponse)
+async def get_recommendations(
+    request: Request,
+    page: int = 1,
+    page_size: int = 20,
+    recommendation_type: Optional[str] = None
+):
+    """Get user's recommendations with pagination and filtering"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    
+    try:
+        with get_db_connection() as db:
+            cursor = db.cursor(dictionary=True)
+            
+            # Build WHERE clause for filtering
+            where_conditions = ["ur.user_id = %s"]
+            params = [user["user_id"]]
+            
+            if recommendation_type:
+                where_conditions.append("ur.suggestion_type = %s")
+                params.append(recommendation_type)
+            
+            where_clause = " AND ".join(where_conditions)
+            
+            # Get total count
+            count_query = f"""
+                SELECT COUNT(*) as total
+                FROM user_recommendations ur
+                WHERE {where_clause}
+            """
+            cursor.execute(count_query, params)
+            total_count = cursor.fetchone()["total"]
+            
+            # Get paginated results
+            offset = (page - 1) * page_size
+            
+            recommendations_query = f"""
+                SELECT 
+                    b.asin, b.title, b.subtitle, b.runtime_length_min, b.language,
+                    ur.suggestion_type, ur.source_name, ur.confidence_score,
+                    ur.purchase_method, ur.generated_at,
+                    GROUP_CONCAT(DISTINCT a.name ORDER BY ba.display_order SEPARATOR ', ') as authors,
+                    GROUP_CONCAT(DISTINCT n.name ORDER BY bn.display_order SEPARATOR ', ') as narrators,
+                    GROUP_CONCAT(DISTINCT s.title SEPARATOR ', ') as series
+                FROM user_recommendations ur
+                JOIN books b ON ur.book_id = b.id
+                LEFT JOIN book_authors ba ON b.id = ba.book_id
+                LEFT JOIN authors a ON ba.author_id = a.id
+                LEFT JOIN book_narrators bn ON b.id = bn.book_id
+                LEFT JOIN narrators n ON bn.narrator_id = n.id
+                LEFT JOIN book_series bs ON b.id = bs.book_id
+                LEFT JOIN series s ON bs.series_id = s.id
+                WHERE {where_clause}
+                GROUP BY b.asin, b.title, b.subtitle, b.runtime_length_min, b.language,
+                         ur.suggestion_type, ur.source_name, ur.confidence_score,
+                         ur.purchase_method, ur.generated_at
+                ORDER BY ur.confidence_score DESC, ur.generated_at DESC
+                LIMIT %s OFFSET %s
+            """
+            
+            params.extend([page_size, offset])
+            cursor.execute(recommendations_query, params)
+            recommendations_data = cursor.fetchall()
+            
+            # Convert to RecommendationBook objects
+            recommendations = []
+            for rec in recommendations_data:
+                recommendations.append(RecommendationBook(
+                    asin=rec["asin"],
+                    title=rec["title"],
+                    subtitle=rec["subtitle"],
+                    authors=rec["authors"].split(", ") if rec["authors"] else [],
+                    narrators=rec["narrators"].split(", ") if rec["narrators"] else [],
+                    series=rec["series"] if rec["series"] else None,
+                    runtime_length_min=rec["runtime_length_min"],
+                    language=rec["language"],
+                    cover_url=None,  # TODO: Add cover URL support
+                    recommendation_type=rec["suggestion_type"],
+                    source_name=rec["source_name"],
+                    confidence_score=rec["confidence_score"],
+                    purchase_method=rec["purchase_method"],
+                    generated_at=rec["generated_at"].isoformat() if rec["generated_at"] else None
+                ))
+            
+            cursor.close()
+            
+            has_next = (page * page_size) < total_count
+            
+            return RecommendationsResponse(
+                recommendations=recommendations,
+                total_count=total_count,
+                page=page,
+                page_size=page_size,
+                has_next=has_next
+            )
+            
+    except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
+        print(f"Recommendations endpoint error: {error_details}")
+        raise HTTPException(status_code=500, detail=f"Failed to get recommendations: {str(e)}")
+
+@api_router.post("/recommendations/generate")
+async def generate_recommendations(request: Request):
+    """Trigger recommendation generation"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    
+    user_id = user["user_id"]
+    rec_status = get_user_recommendation_status(user_id)
+    
+    if rec_status["is_generating"]:
+        return {"success": False, "message": "Recommendation generation already in progress"}
+    
+    try:
+        # Start generation in background thread
+        def run_generation():
+            set_user_recommendation_status(user_id, is_generating=True, status_message="Starting recommendation generation...")
+            
+            try:
+                # Run the phase4_generate_recommendations.py script using virtual environment
+                result = subprocess.run([
+                    "/var/www/html/AudiPy/backend/venv/bin/python3", "phase4_generate_recommendations.py"
+                ], 
+                cwd="/var/www/html/AudiPy/backend",
+                capture_output=True, 
+                text=True,
+                timeout=600  # 10 minute timeout
+                )
+                
+                if result.returncode == 0:
+                    # Count generated recommendations
+                    with get_db_connection() as db:
+                        cursor = db.cursor()
+                        cursor.execute("SELECT COUNT(*) FROM user_recommendations WHERE user_id = %s", (user_id,))
+                        total_recs = cursor.fetchone()[0]
+                        cursor.close()
+                    
+                    set_user_recommendation_status(user_id, 
+                        status_message="Recommendations generated successfully",
+                        last_generated=datetime.now(timezone.utc).isoformat(),
+                        total_recommendations=total_recs
+                    )
+                else:
+                    set_user_recommendation_status(user_id, status_message=f"Generation failed: {result.stderr}")
+                    
+            except subprocess.TimeoutExpired:
+                set_user_recommendation_status(user_id, status_message="Generation timed out after 10 minutes")
+            except Exception as e:
+                set_user_recommendation_status(user_id, status_message=f"Generation error: {str(e)}")
+            finally:
+                set_user_recommendation_status(user_id, is_generating=False)
+        
+        # Start generation thread
+        generation_thread = threading.Thread(target=run_generation)
+        generation_thread.daemon = True
+        generation_thread.start()
+        
+        return {"success": True, "message": "Recommendation generation started"}
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to start recommendation generation: {str(e)}")
+
+@api_router.get("/recommendations/status", response_model=GenerationStatusResponse)
+async def get_recommendation_status(request: Request):
+    """Get recommendation generation status"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    
+    user_id = user["user_id"]
+    status = get_user_recommendation_status(user_id)
+    
+    # Get current recommendation count from database
+    try:
+        with get_db_connection() as db:
+            cursor = db.cursor()
+            cursor.execute("SELECT COUNT(*) FROM user_recommendations WHERE user_id = %s", (user_id,))
+            total_recs = cursor.fetchone()[0]
+            cursor.close()
+            status["total_recommendations"] = total_recs
+    except Exception:
+        pass  # Use cached value if database query fails
+    
+    return GenerationStatusResponse(**status)
+
 @app.post("/auth/audible")
 async def authenticate_audible_legacy(
     auth_request: dict,

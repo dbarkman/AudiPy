@@ -45,7 +45,8 @@ export default function Dashboard() {
       icon: <Recommend sx={{ fontSize: 40 }} />,
       action: 'Get Recommendations',
       color: 'secondary',
-      comingSoon: true,
+      comingSoon: false,
+      onClick: () => navigate('/recommendations'),
     },
     {
       title: 'Analytics',
@@ -200,7 +201,7 @@ export default function Dashboard() {
         ))}
       </Grid>
 
-      {/* Phase 3 Complete Message */}
+      {/* Phase 4 Complete Message */}
       <Box
         sx={{
           mt: 6,
@@ -211,15 +212,15 @@ export default function Dashboard() {
         }}
       >
         <Typography variant="h6" gutterBottom>
-          🎉 Phase 3: Library Management Complete!
+          🎉 Phase 4: AI Recommendations Engine Complete!
         </Typography>
         <Typography variant="body1">
           ✅ Authentication & User Profile (Phase 1 & 2) <br/>
           ✅ Library Display & Management (Phase 3) <br/>
-          🔄 Next: Recommendations Engine (Phase 4)
+          ✅ AI Recommendations Engine (Phase 4)
         </Typography>
         <Typography variant="body2" sx={{ mt: 1, fontStyle: 'italic' }}>
-          Click "View Library" above to see your books with search, filtering, and sync capabilities!
+          Click "Get Recommendations" above to discover personalized book suggestions based on your library!
         </Typography>
       </Box>
     </Container>

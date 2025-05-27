@@ -32,6 +32,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import Dashboard from './components/Dashboard';
 import UserProfile from './components/UserProfile';
 import Library from './components/Library';
+import Recommendations from './components/Recommendations';
 
 // Create a custom theme
 const theme = createTheme({
@@ -289,6 +290,7 @@ function AuthenticatedApp() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/library" element={<Library />} />
+        <Route path="/recommendations" element={<Recommendations />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
