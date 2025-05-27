@@ -26,6 +26,12 @@ import {
   Recommend,
   Analytics,
 } from '@mui/icons-material';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import Dashboard from './components/Dashboard';
+import UserProfile from './components/UserProfile';
+import Library from './components/Library';
 
 // Create a custom theme
 const theme = createTheme({
@@ -55,7 +61,8 @@ const theme = createTheme({
   },
 });
 
-function App() {
+// Landing page component for non-authenticated users
+function LandingPage() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -73,7 +80,7 @@ function App() {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        NextBookFinder
+        AudiPy
       </Typography>
       <List>
         {navigationItems.map((item) => (
@@ -104,9 +111,7 @@ function App() {
   ];
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      
+    <>
       {/* Navigation */}
       <AppBar position="static" elevation={0}>
         <Toolbar>
@@ -116,7 +121,7 @@ function App() {
             component="div"
             sx={{ flexGrow: 1, fontWeight: 600 }}
           >
-            NextBookFinder
+            AudiPy
           </Typography>
           
           {isMobile ? (
@@ -185,6 +190,7 @@ function App() {
                 bgcolor: 'grey.100',
               },
             }}
+            href="#login"
           >
             Get Started
           </Button>
@@ -192,7 +198,7 @@ function App() {
       </Box>
 
       {/* Features Section */}
-      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }} id="features">
         <Typography variant="h2" textAlign="center" gutterBottom>
           Features
         </Typography>
@@ -213,9 +219,9 @@ function App() {
                   height: '100%',
                   textAlign: 'center',
                   p: 2,
-                  transition: 'transform 0.2s',
                   '&:hover': {
                     transform: 'translateY(-4px)',
+                    transition: 'transform 0.3s ease-in-out',
                   },
                 }}
               >
@@ -226,7 +232,7 @@ function App() {
                   <Typography variant="h5" gutterBottom>
                     {feature.title}
                   </Typography>
-                  <Typography color="text.secondary">
+                  <Typography variant="body1" color="text.secondary">
                     {feature.description}
                   </Typography>
                 </CardContent>
@@ -236,49 +242,80 @@ function App() {
         </Grid>
       </Container>
 
-      {/* CTA Section */}
-      <Box
-        sx={{
-          bgcolor: 'grey.50',
-          py: { xs: 6, md: 8 },
-          textAlign: 'center',
-        }}
-      >
+      {/* Login Section */}
+      <Box sx={{ bgcolor: 'grey.50', py: { xs: 6, md: 10 } }} id="login">
         <Container maxWidth="md">
-          <Typography variant="h2" gutterBottom>
-            Ready to Discover More?
+          <Typography variant="h2" textAlign="center" gutterBottom>
+            Ready to Get Started?
           </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-            Connect your Audible account and start getting personalized recommendations today
-          </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            sx={{ px: 4, py: 1.5, fontSize: '1.1rem' }}
+          <Typography
+            variant="h6"
+            textAlign="center"
+            color="text.secondary"
+            sx={{ mb: 4 }}
           >
-            Sign Up Now
-          </Button>
+            Sign in with your Audible account to begin analyzing your library
+          </Typography>
+          
+          {/* The ProtectedRoute component will show the login form here */}
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
         </Container>
       </Box>
+    </>
+  );
+}
 
-      {/* Footer */}
-      <Box
-        sx={{
-          bgcolor: 'grey.900',
-          color: 'white',
-          py: 4,
-          textAlign: 'center',
-        }}
-      >
-        <Container>
-          <Typography variant="body2" sx={{ opacity: 0.8 }}>
-            © 2024 NextBookFinder. A free tool for Audible enthusiasts.
+// Authenticated app layout
+function AuthenticatedApp() {
+  return (
+    <>
+      {/* Simple header for authenticated users */}
+      <AppBar position="static" elevation={0}>
+        <Toolbar>
+          <Audiotrack sx={{ mr: 2 }} />
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, fontWeight: 600 }}
+          >
+            AudiPy
           </Typography>
-          <Typography variant="body2" sx={{ opacity: 0.6, mt: 1 }}>
-            Not affiliated with Audible or Amazon. Built with ❤️ for audiobook lovers.
-          </Typography>
-        </Container>
-      </Box>
+        </Toolbar>
+      </AppBar>
+      
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
+  );
+}
+
+// Main app component with authentication
+function AppContent() {
+  const { isAuthenticated } = useAuth();
+
+  // Show authenticated app if logged in, landing page if not
+  if (isAuthenticated) {
+    return <AuthenticatedApp />;
+  }
+
+  return <LandingPage />;
+}
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AuthProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </AuthProvider>
     </ThemeProvider>
   );
 }

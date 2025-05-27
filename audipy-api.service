@@ -1,0 +1,16 @@
+[Unit]
+Description=AudiPy FastAPI application
+After=network.target
+
+[Service]
+Type=exec
+User=david
+Group=david
+WorkingDirectory=/var/www/html/AudiPy/backend
+Environment=PATH=/var/www/html/AudiPy/backend/venv/bin
+ExecStart=/var/www/html/AudiPy/backend/venv/bin/uvicorn api.main:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target 

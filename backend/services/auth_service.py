@@ -38,8 +38,15 @@ class AuthService:
                 'locale': marketplace
             }
             
+            # If OTP code is provided, create callbacks that return it
+            # The audible library may ask for either OTP or CVF codes
             if otp_code:
-                auth_kwargs['otp_code'] = otp_code
+                def otp_callback():
+                    return otp_code
+                def cvf_callback():
+                    return otp_code
+                auth_kwargs['otp_callback'] = otp_callback
+                auth_kwargs['cvf_callback'] = cvf_callback
             
             auth = Authenticator.from_login(**auth_kwargs)
             
@@ -67,8 +74,18 @@ class AuthService:
         except Exception as e:
             error_msg = str(e)
             
-            # Check if OTP is required
-            if "OTP" in error_msg or "captcha" in error_msg.lower():
+            # Check if OTP/CVF is required - common patterns that indicate 2FA needed
+            otp_indicators = [
+                "OTP",
+                "CVF",  # Customer Verification Form
+                "captcha",
+                "EOF when reading a line",  # This is the key one - happens when Audible expects OTP input
+                "two-factor",
+                "verification code",
+                "authentication code"
+            ]
+            
+            if any(indicator in error_msg for indicator in otp_indicators):
                 return {
                     'success': False,
                     'message': 'Two-factor authentication required',

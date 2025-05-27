@@ -452,12 +452,84 @@ class LibraryFetcher:
         return True
 
 def main():
-    fetcher = LibraryFetcher()
-    success = fetcher.run()
+    import argparse
     
-    if not success:
-        console.print("\n[red]❌ Library fetch failed. Please check the errors above.[/]")
-        exit(1)
+    parser = argparse.ArgumentParser(description='Fetch Audible library for a user')
+    parser.add_argument('--user-id', type=int, help='User ID to fetch library for')
+    args = parser.parse_args()
+    
+    fetcher = LibraryFetcher()
+    
+    # If user ID is provided, override the default user lookup
+    if args.user_id:
+        fetcher.user_id = args.user_id
+        console.print(f"[blue]📋 Using provided user ID: {args.user_id}[/]")
+        
+        # Skip the user lookup and load preferences directly
+        if not fetcher.connect_db():
+            exit(1)
+            
+        # Load preferences for the specified user
+        cursor = fetcher.db.cursor()
+        try:
+            cursor.execute("""
+                SELECT preferred_language, marketplace FROM user_preferences 
+                WHERE user_id = %s
+            """, (args.user_id,))
+            
+            prefs = cursor.fetchone()
+            if prefs:
+                fetcher.user_preferences = {
+                    'language': prefs[0] or 'english',
+                    'marketplace': prefs[1] or 'us'
+                }
+                console.print(f"[blue]📋 Loaded preferences: {fetcher.user_preferences['language']}, {fetcher.user_preferences['marketplace']}[/]")
+            else:
+                # Use defaults if no preferences found
+                fetcher.user_preferences = {
+                    'language': 'english',
+                    'marketplace': 'us'
+                }
+                console.print(f"[yellow]⚠️ No preferences found for user {args.user_id}, using defaults[/]")
+                
+        except Exception as e:
+            console.print(f"[red]❌ Failed to load preferences for user {args.user_id}: {e}[/]")
+            exit(1)
+        finally:
+            cursor.close()
+        
+        # Load Audible client
+        if not fetcher.load_audible_client():
+            exit(1)
+        
+        # Fetch library
+        if not fetcher.fetch_library():
+            fetcher.update_sync_status('failed')
+            exit(1)
+        
+        # Store library in database
+        if not fetcher.store_library():
+            fetcher.update_sync_status('failed')
+            exit(1)
+        
+        # Update sync status
+        fetcher.update_sync_status('completed')
+        
+        # Display statistics
+        fetcher.display_library_stats()
+        
+        console.print("\n[bold green]🎉 Phase 3 Complete![/]")
+        console.print("[green]✅ Library fetched successfully[/]")
+        console.print("[green]✅ Books stored in database[/]")
+        console.print("[green]✅ Authors, narrators, and series cataloged[/]")
+        
+    else:
+        # Run the normal flow for interactive use
+        success = fetcher.run()
+        
+        if not success:
+            console.print("\n[red]❌ Library fetch failed. Please check the errors above.[/]")
+            exit(1)
 
 if __name__ == "__main__":
     main() 
