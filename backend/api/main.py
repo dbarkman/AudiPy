@@ -11,7 +11,7 @@ from typing import Optional, Dict, Any, List
 import uvicorn
 import jwt
 import uuid
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import os
 import asyncio
 import subprocess
@@ -235,7 +235,7 @@ async def login(login_request: LoginRequest, response: Response):
                 "username": login_request.username,
                 "password": login_request.password,
                 "marketplace": login_request.marketplace,
-                "created_at": datetime.utcnow(),
+                "created_at": datetime.now(timezone.utc),
             }
             
             return LoginResponse(
@@ -289,7 +289,7 @@ async def verify_otp(otp_request: OTPRequest, response: Response):
             raise HTTPException(status_code=400, detail="Invalid or expired session")
         
         # Check session expiration (15 minutes)
-        if datetime.utcnow() - session["created_at"] > timedelta(minutes=15):
+        if datetime.now(timezone.utc) - session["created_at"] > timedelta(minutes=15):
             del otp_sessions[otp_request.session_id]
             raise HTTPException(status_code=400, detail="Session expired")
         

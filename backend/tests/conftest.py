@@ -5,7 +5,11 @@ Pytest configuration and shared fixtures
 import pytest
 import os
 from unittest.mock import Mock, patch
+from dotenv import load_dotenv
 from utils.crypto_utils_simple import get_crypto_instance
+
+# Load environment variables for testing
+load_dotenv()
 
 
 @pytest.fixture
