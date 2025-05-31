@@ -63,10 +63,13 @@ class RecommendationGenerator:
         cursor = self.db.cursor()
         
         try:
-            # Get user
+            # Get first available user (for testing - later this will be passed as parameter)
             cursor.execute("""
-                SELECT id, display_name FROM users 
-                WHERE oauth_provider = 'test' AND oauth_provider_id = 'test_user_001'
+                SELECT u.id, u.display_name FROM users u
+                JOIN user_audible_accounts uaa ON u.id = uaa.user_id
+                WHERE u.oauth_provider = 'audible' 
+                ORDER BY u.created_at DESC
+                LIMIT 1
             """)
             
             result = cursor.fetchone()
@@ -77,7 +80,7 @@ class RecommendationGenerator:
             self.user_id = result[0]
             console.print(f"[green]✅ Found user: {result[1]} (ID: {self.user_id})[/]")
             
-            # Get user preferences
+            # Get user preferences (create default if not exists)
             cursor.execute("""
                 SELECT preferred_language, marketplace, max_price FROM user_preferences 
                 WHERE user_id = %s
@@ -85,14 +88,25 @@ class RecommendationGenerator:
             
             prefs = cursor.fetchone()
             if not prefs:
-                console.print("[red]❌ No user preferences found. Please run Phase 2 (profile setup) first.[/]")
-                return False
-            
-            self.user_preferences = {
-                'language': prefs[0] or 'english',
-                'marketplace': prefs[1] or 'us',
-                'max_price': float(prefs[2]) if prefs[2] else 12.66
-            }
+                console.print("[yellow]⚠️ No user preferences found. Creating defaults...[/]")
+                # Create default preferences
+                cursor.execute("""
+                    INSERT INTO user_preferences (user_id, preferred_language, marketplace, max_price)
+                    VALUES (%s, 'english', 'us', 12.66)
+                    ON DUPLICATE KEY UPDATE user_id = VALUES(user_id)
+                """, (self.user_id,))
+                
+                self.user_preferences = {
+                    'language': 'english',
+                    'marketplace': 'us', 
+                    'max_price': 12.66
+                }
+            else:
+                self.user_preferences = {
+                    'language': prefs[0] or 'english',
+                    'marketplace': prefs[1] or 'us',
+                    'max_price': float(prefs[2]) if prefs[2] else 12.66
+                }
             
             console.print(f"[blue]📋 Loaded preferences: {self.user_preferences}[/]")
             return True

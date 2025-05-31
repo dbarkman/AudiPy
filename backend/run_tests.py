@@ -175,7 +175,7 @@ def main():
     if test_type in ["all", "unit"]:
         # Run unit tests (exclude integration tests and broken API tests)
         result = run_command(
-            "python -m pytest tests/ -v -m 'not integration' --ignore=tests/test_api.py --ignore=tests/test_api_simple.py -q",
+            "venv/bin/python -m pytest tests/ -v -m 'not integration' --ignore=tests/test_api.py --ignore=tests/test_api_simple.py -q",
             "Unit Tests (Services, Crypto, Database)"
         )
         success &= result
@@ -185,7 +185,7 @@ def main():
     if test_type == "all":
         # Run unit API tests as part of "all"
         result = run_command(
-            "python -m pytest tests/test_api_units.py -v -q",
+            "venv/bin/python -m pytest tests/test_api_units.py -v -q",
             "API Unit Tests (Route Handlers)"
         )
         success &= result
@@ -194,7 +194,7 @@ def main():
             
         # Run simple integration API tests as part of "all"
         result = run_command(
-            "python -m pytest tests/test_api_simple.py -v -q",
+            "venv/bin/python -m pytest tests/test_api_simple.py -v -q",
             "API Integration Tests (HTTP Requests)"
         )
         success &= result
@@ -204,7 +204,7 @@ def main():
     if test_type in ["all", "integration"]:
         # Run integration tests
         result = run_command(
-            "python -m pytest tests/ -v -m 'integration' -q",
+            "venv/bin/python -m pytest tests/ -v -m 'integration' -q",
             "Integration Tests (End-to-End)"
         )
         success &= result
@@ -214,7 +214,7 @@ def main():
     if test_type == "coverage":
         # Run tests with coverage
         result = run_command(
-            "python -m pytest tests/ --cov=services --cov=utils --cov=api --cov-report=html --cov-report=term-missing",
+            "venv/bin/python -m pytest tests/ --cov=services --cov=utils --cov=api --cov-report=html --cov-report=term-missing",
             "Coverage Report (All Tests)"
         )
         success &= result
@@ -223,7 +223,7 @@ def main():
     if test_type == "fast":
         # Run fast tests only
         result = run_command(
-            "python -m pytest tests/ -v -m 'not slow and not integration' -q",
+            "venv/bin/python -m pytest tests/ -v -m 'not slow and not integration' -q",
             "Fast Tests Only"
         )
         success &= result
@@ -232,11 +232,11 @@ def main():
     if test_type == "api":
         # Run both unit and integration API tests
         result1 = run_command(
-            "python -m pytest tests/test_api_units.py -v -q",
+            "venv/bin/python -m pytest tests/test_api_units.py -v -q",
             "API Unit Tests"
         )
         result2 = run_command(
-            "python -m pytest tests/test_api_simple.py -v -q",
+            "venv/bin/python -m pytest tests/test_api_simple.py -v -q",
             "API Integration Tests"
         )
         success &= (result1 and result2)
@@ -245,7 +245,7 @@ def main():
     if test_type == "api-unit":
         # Run unit API tests only
         result = run_command(
-            "python -m pytest tests/test_api_units.py -v -q",
+            "venv/bin/python -m pytest tests/test_api_units.py -v -q",
             "API Unit Tests (Fast)"
         )
         success &= result
@@ -254,7 +254,7 @@ def main():
     if test_type == "api-integration":
         # Run integration API tests only
         result = run_command(
-            "python -m pytest tests/test_api_simple.py -v -q",
+            "venv/bin/python -m pytest tests/test_api_simple.py -v -q",
             "API Integration Tests (Requires Server)"
         )
         success &= result
@@ -263,7 +263,7 @@ def main():
     if test_type == "services":
         # Run service tests only
         result = run_command(
-            "python -m pytest tests/test_auth_service.py -v -q",
+            "venv/bin/python -m pytest tests/test_auth_service.py -v -q",
             "Authentication Service Tests"
         )
         success &= result
@@ -272,7 +272,7 @@ def main():
     if test_type == "crypto":
         # Run crypto tests only
         result = run_command(
-            "python -m pytest tests/test_crypto_utils.py -v -q",
+            "venv/bin/python -m pytest tests/test_crypto_utils.py -v -q",
             "Encryption & Security Tests"
         )
         success &= result
@@ -281,7 +281,7 @@ def main():
     if test_type == "db":
         # Run database tests only
         result = run_command(
-            "python -m pytest tests/test_db_connection.py -v -q",
+            "venv/bin/python -m pytest tests/test_db_connection.py -v -q",
             "Database Connection Tests"
         )
         success &= result
@@ -290,7 +290,7 @@ def main():
     if test_type == "backend":
         # Run all working backend tests (services, crypto, db, API units)
         result = run_command(
-            "python -m pytest tests/test_auth_service.py tests/test_crypto_utils.py tests/test_db_connection.py tests/test_api_units.py -v -q",
+            "venv/bin/python -m pytest tests/test_auth_service.py tests/test_crypto_utils.py tests/test_db_connection.py tests/test_api_units.py -v -q",
             "Backend Tests (All Units)"
         )
         success &= result

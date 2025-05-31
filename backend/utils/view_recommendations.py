@@ -44,7 +44,7 @@ def view_recommendations():
                 ur.generated_at
             FROM user_recommendations ur
             JOIN books b ON ur.book_id = b.id
-            WHERE ur.user_id = 1
+            WHERE ur.user_id = 4
             ORDER BY ur.suggestion_type, ur.confidence_score DESC, b.title
         """)
         
@@ -87,7 +87,7 @@ def view_recommendations():
                 COUNT(*) as count,
                 AVG(ur.confidence_score) as avg_confidence
             FROM user_recommendations ur
-            WHERE ur.user_id = 1
+            WHERE ur.user_id = 4
             GROUP BY ur.suggestion_type
             ORDER BY count DESC
         """)
