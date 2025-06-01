@@ -1,6 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { vi } from 'vitest'
+import { MemoryRouter } from 'react-router-dom'
 import Library from '../Library'
 import api from '../../utils/api'
 
@@ -78,7 +79,11 @@ describe('Library', () => {
 
   describe('Rendering', () => {
     it('should render library header and controls', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       expect(screen.getByText('My Library')).toBeInTheDocument()
       
@@ -93,7 +98,11 @@ describe('Library', () => {
     })
 
     it('should render search and filter controls', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       expect(screen.getByPlaceholderText('Search books...')).toBeInTheDocument()
       expect(screen.getByPlaceholderText('Filter by author')).toBeInTheDocument()
@@ -103,7 +112,11 @@ describe('Library', () => {
     })
 
     it('should render books after loading', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       // Wait for loading to complete
       await waitFor(() => {
@@ -118,13 +131,21 @@ describe('Library', () => {
 
   describe('Loading States', () => {
     it('should show loading spinner initially', () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       expect(screen.getByRole('progressbar')).toBeInTheDocument()
     })
 
     it('should hide loading spinner after data loads', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -135,7 +156,11 @@ describe('Library', () => {
   describe('Search and Filtering', () => {
     it('should update search term and trigger API call', async () => {
       const user = userEvent.setup()
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -156,7 +181,11 @@ describe('Library', () => {
 
     it('should filter by author', async () => {
       const user = userEvent.setup()
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -174,7 +203,11 @@ describe('Library', () => {
 
     it('should clear all filters', async () => {
       const user = userEvent.setup()
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -195,7 +228,11 @@ describe('Library', () => {
     })
 
     it('should disable clear button when no filters are active', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -211,7 +248,11 @@ describe('Library', () => {
       const user = userEvent.setup()
       api.post.mockResolvedValue({ data: { success: true } })
       
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -235,7 +276,11 @@ describe('Library', () => {
         return Promise.reject(new Error('Unknown endpoint'))
       })
       
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('Syncing...')).toBeInTheDocument()
@@ -247,7 +292,11 @@ describe('Library', () => {
 
     it('should refresh library when refresh button is clicked', async () => {
       const user = userEvent.setup()
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -275,7 +324,11 @@ describe('Library', () => {
         return Promise.reject(new Error('Unknown endpoint'))
       })
       
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('Failed to load library. Please try again.')).toBeInTheDocument()
@@ -286,7 +339,11 @@ describe('Library', () => {
       const user = userEvent.setup()
       api.post.mockRejectedValue(new Error('Sync failed'))
       
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -312,7 +369,11 @@ describe('Library', () => {
         return Promise.reject(new Error('Unknown endpoint'))
       })
       
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('Failed to load library. Please try again.')).toBeInTheDocument()
@@ -341,7 +402,11 @@ describe('Library', () => {
         return Promise.reject(new Error('Unknown endpoint'))
       })
       
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -359,7 +424,11 @@ describe('Library', () => {
 
   describe('Data Display', () => {
     it('should format and display book information correctly', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
@@ -374,7 +443,11 @@ describe('Library', () => {
     })
 
     it('should show correct book count in header', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText(/2 books/)).toBeInTheDocument()
@@ -382,7 +455,11 @@ describe('Library', () => {
     })
 
     it('should display last sync date', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText(/Last sync:/)).toBeInTheDocument()
@@ -392,7 +469,11 @@ describe('Library', () => {
 
   describe('Accessibility', () => {
     it('should have proper ARIA labels and roles', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       expect(screen.getByRole('button', { name: /sync library/i })).toBeInTheDocument()
       expect(screen.getByRole('button', { name: /refresh library/i })).toBeInTheDocument()
@@ -400,7 +481,11 @@ describe('Library', () => {
     })
 
     it('should have proper form labels', async () => {
-      render(<Library />)
+      render(
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      )
       
       expect(screen.getByPlaceholderText('Search books...')).toBeInTheDocument()
       expect(screen.getByPlaceholderText('Filter by author')).toBeInTheDocument()
@@ -408,4 +493,4 @@ describe('Library', () => {
       expect(screen.getByPlaceholderText('Filter by series')).toBeInTheDocument()
     })
   })
-}) 
+})            

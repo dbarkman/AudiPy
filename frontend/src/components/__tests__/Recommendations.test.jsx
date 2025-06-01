@@ -1,6 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { vi } from 'vitest'
+import { MemoryRouter } from 'react-router-dom'
 import Recommendations from '../Recommendations'
 import api from '../../utils/api'
 
@@ -99,14 +100,22 @@ describe('Recommendations', () => {
 
   describe('Rendering', () => {
     it('should render recommendations page header', async () => {
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       expect(screen.getByText('Recommendations')).toBeInTheDocument()
       expect(screen.getByText('Personalized book recommendations based on your library')).toBeInTheDocument()
     })
 
     it('should render control buttons', async () => {
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       expect(screen.getByText('Generate New Recommendations')).toBeInTheDocument()
       expect(screen.getByText('Refresh')).toBeInTheDocument()
@@ -114,7 +123,11 @@ describe('Recommendations', () => {
     })
 
     it('should render recommendations after loading', async () => {
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('2 Recommendations Found')).toBeInTheDocument()
@@ -127,7 +140,11 @@ describe('Recommendations', () => {
 
   describe('Generation Status', () => {
     it('should show generation status when available', async () => {
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('2 recommendations available')).toBeInTheDocument()
@@ -159,7 +176,11 @@ describe('Recommendations', () => {
         return Promise.reject(new Error('Unknown endpoint'))
       })
       
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('Generating recommendations...')).toBeInTheDocument()
@@ -170,7 +191,11 @@ describe('Recommendations', () => {
   describe('User Interactions', () => {
     it('should trigger generation when generate button is clicked', async () => {
       const user = userEvent.setup()
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       const generateButton = screen.getByText('Generate New Recommendations')
       await user.click(generateButton)
@@ -180,7 +205,11 @@ describe('Recommendations', () => {
 
     it('should refresh recommendations when refresh button is clicked', async () => {
       const user = userEvent.setup()
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       // Wait for initial load
       await waitFor(() => {
@@ -197,7 +226,11 @@ describe('Recommendations', () => {
 
     it('should filter recommendations by type', async () => {
       const user = userEvent.setup()
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       // Wait for initial load
       await waitFor(() => {
@@ -226,7 +259,11 @@ describe('Recommendations', () => {
 
   describe('Recommendation Display', () => {
     it('should display recommendation details correctly', async () => {
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('Recommended Book 1')).toBeInTheDocument()
@@ -245,7 +282,11 @@ describe('Recommendations', () => {
     })
 
     it('should handle books without optional fields', async () => {
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('Recommended Book 2')).toBeInTheDocument()
@@ -281,7 +322,11 @@ describe('Recommendations', () => {
         return Promise.reject(new Error('Unknown endpoint'))
       })
       
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('No Recommendations Yet')).toBeInTheDocument()
@@ -303,7 +348,11 @@ describe('Recommendations', () => {
         return Promise.reject(new Error('Unknown endpoint'))
       })
       
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       await waitFor(() => {
         expect(screen.getByText('Failed to load recommendations. Please try again.')).toBeInTheDocument()
@@ -316,7 +365,11 @@ describe('Recommendations', () => {
       })
       
       const user = userEvent.setup()
-      render(<Recommendations />)
+      render(
+        <MemoryRouter>
+          <Recommendations />
+        </MemoryRouter>
+      )
       
       const generateButton = screen.getByText('Generate New Recommendations')
       await user.click(generateButton)
@@ -326,4 +379,4 @@ describe('Recommendations', () => {
       })
     })
   })
-}) 
+})    
