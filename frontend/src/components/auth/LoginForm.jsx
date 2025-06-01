@@ -104,13 +104,17 @@ export default function LoginForm() {
   return (
     <Card 
       sx={{ 
-        maxWidth: 400, 
+        maxWidth: 450, 
         mx: 'auto',
         mt: { xs: 2, md: 4 },
         mb: 4,
+        borderRadius: 4,
+        boxShadow: '0px 8px 32px rgba(0, 0, 0, 0.12)',
+        border: '1px solid',
+        borderColor: 'grey.200',
       }}
     >
-      <CardContent sx={{ p: { xs: 2, md: 3 } }}>
+      <CardContent sx={{ p: { xs: 3, md: 4 } }}>
         <Typography 
           variant="h5" 
           component="h2" 
@@ -268,4 +272,4 @@ export default function LoginForm() {
       </CardContent>
     </Card>
   );
-} 
+}  

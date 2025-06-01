@@ -261,10 +261,23 @@ const Recommendations = () => {
           <Grid container spacing={3}>
             {recommendations.map((rec) => (
               <Grid item xs={12} sm={6} md={4} key={`${rec.asin}-${rec.recommendation_type}-${rec.source_name}`}>
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <CardContent sx={{ flexGrow: 1 }}>
+                <Card sx={{ 
+                  height: '100%', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  border: '1px solid',
+                  borderColor: 'grey.200',
+                  borderRadius: 3,
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  '&:hover': {
+                    borderColor: 'primary.light',
+                    boxShadow: '0px 12px 32px rgba(255, 102, 0, 0.15)',
+                    transform: 'translateY(-4px)',
+                  }
+                }}>
+                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
                     {/* Book Title */}
-                    <Typography variant="h6" component="h3" gutterBottom noWrap>
+                    <Typography variant="h6" component="h3" gutterBottom noWrap sx={{ fontWeight: 600 }}>
                       {rec.title}
                     </Typography>
                     
@@ -305,23 +318,26 @@ const Recommendations = () => {
                     <Divider sx={{ my: 2 }} />
 
                     {/* Recommendation Info */}
-                    <Box sx={{ display: 'flex', gap: 1, mb: 1, flexWrap: 'wrap' }}>
+                    <Box sx={{ display: 'flex', gap: 1, mb: 2, flexWrap: 'wrap' }}>
                       <Chip
                         icon={getTypeIcon(rec.recommendation_type)}
                         label={rec.recommendation_type}
                         size="small"
                         color="primary"
                         variant="outlined"
+                        sx={{ borderRadius: 2 }}
                       />
                       <Chip
                         label={`${(rec.confidence_score * 100).toFixed(0)}% match`}
                         size="small"
                         color={getConfidenceColor(rec.confidence_score)}
+                        sx={{ borderRadius: 2 }}
                       />
                       <Chip
                         label={rec.purchase_method}
                         size="small"
                         color={rec.purchase_method === 'cash' ? 'success' : 'default'}
+                        sx={{ borderRadius: 2 }}
                       />
                     </Box>
 
@@ -374,4 +390,4 @@ const Recommendations = () => {
   );
 };
 
-export default Recommendations; 
+export default Recommendations;  

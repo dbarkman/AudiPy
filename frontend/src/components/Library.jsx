@@ -370,10 +370,14 @@ const Library = () => {
                     display: 'flex', 
                     flexDirection: 'column',
                     cursor: 'pointer',
+                    border: '1px solid',
+                    borderColor: 'grey.200',
+                    borderRadius: 3,
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                     '&:hover': {
-                      boxShadow: 4,
-                      transform: 'translateY(-2px)',
-                      transition: 'all 0.2s ease-in-out'
+                      borderColor: 'primary.light',
+                      boxShadow: '0px 12px 32px rgba(255, 102, 0, 0.15)',
+                      transform: 'translateY(-4px)',
                     }
                   }}
                   onClick={() => handleBookDetails(book)}
@@ -381,18 +385,19 @@ const Library = () => {
                   <CardMedia
                     component="div"
                     sx={{
-                      height: 200,
-                      backgroundColor: 'grey.200',
+                      height: 220,
+                      background: 'linear-gradient(145deg, #f5f5f5 0%, #e0e0e0 100%)',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center'
+                      justifyContent: 'center',
+                      borderRadius: '12px 12px 0 0',
                     }}
                   >
-                    <BookIcon sx={{ fontSize: 60, color: 'grey.400' }} />
+                    <BookIcon sx={{ fontSize: 64, color: 'grey.400' }} />
                   </CardMedia>
                   
-                  <CardContent sx={{ flexGrow: 1, p: 2 }}>
-                    <Typography variant="h6" component="h3" gutterBottom noWrap>
+                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                    <Typography variant="h6" component="h3" gutterBottom noWrap sx={{ fontWeight: 600 }}>
                       {book.title}
                     </Typography>
                     
@@ -419,6 +424,7 @@ const Library = () => {
                           label={formatRuntime(book.runtime_length_min)}
                           size="small"
                           variant="outlined"
+                          sx={{ borderRadius: 2 }}
                         />
                       )}
                       
@@ -428,12 +434,13 @@ const Library = () => {
                           label={book.language}
                           size="small"
                           variant="outlined"
+                          sx={{ borderRadius: 2 }}
                         />
                       )}
                     </Box>
                     
                     {book.series && (
-                      <Typography variant="caption" display="block" sx={{ mt: 1 }}>
+                      <Typography variant="caption" display="block" sx={{ mt: 2, fontWeight: 500 }}>
                         Series: {book.series}
                       </Typography>
                     )}
@@ -638,4 +645,4 @@ const Library = () => {
   );
 };
 
-export default Library; 
+export default Library;  

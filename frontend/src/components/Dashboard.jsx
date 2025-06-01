@@ -69,48 +69,55 @@ export default function Dashboard() {
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       {/* Welcome Header */}
-      <Box sx={{ mb: 4, textAlign: 'center' }}>
+      <Box sx={{ mb: 6, textAlign: 'center' }}>
         <Avatar
           sx={{
-            width: 80,
-            height: 80,
+            width: 100,
+            height: 100,
             mx: 'auto',
-            mb: 2,
+            mb: 3,
             bgcolor: 'primary.main',
-            fontSize: '2rem',
+            fontSize: '2.5rem',
+            boxShadow: '0px 8px 24px rgba(255, 102, 0, 0.3)',
           }}
         >
           {user?.username?.charAt(0)?.toUpperCase() || 'U'}
         </Avatar>
         
-        <Typography variant="h4" gutterBottom>
-          Welcome back!
+        <Typography variant="h4" gutterBottom sx={{ mb: 2, fontWeight: 600 }}>
+          Welcome back, {user?.username || 'User'}!
         </Typography>
         
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 3, fontSize: '1.125rem' }}>
           Ready to discover your next great listen?
         </Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mb: 2 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 3, flexWrap: 'wrap' }}>
           <Chip 
             label={`Marketplace: ${user?.marketplace?.toUpperCase() || 'US'}`} 
             variant="outlined" 
-            size="small" 
+            sx={{ 
+              borderRadius: 3,
+              fontWeight: 500,
+            }}
           />
           <Chip 
             label="Connected to Audible" 
             color="success" 
-            variant="outlined" 
-            size="small" 
+            variant="filled"
+            sx={{ 
+              borderRadius: 3,
+              fontWeight: 500,
+            }}
           />
         </Box>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
           <Button
             variant="outlined"
             startIcon={<Settings />}
             onClick={() => navigate('/profile')}
-            size="small"
+            sx={{ borderRadius: 3 }}
           >
             Profile & Settings
           </Button>
@@ -118,7 +125,7 @@ export default function Dashboard() {
             variant="outlined"
             startIcon={<ExitToApp />}
             onClick={handleLogout}
-            size="small"
+            sx={{ borderRadius: 3 }}
           >
             Sign Out
           </Button>
@@ -126,7 +133,7 @@ export default function Dashboard() {
       </Box>
 
       {/* Dashboard Cards */}
-      <Grid container spacing={3}>
+      <Grid container spacing={4}>
         {dashboardCards.map((card, index) => (
           <Grid item xs={12} sm={6} md={3} key={index}>
             <Card
@@ -135,9 +142,15 @@ export default function Dashboard() {
                 display: 'flex',
                 flexDirection: 'column',
                 position: 'relative',
+                border: '1px solid',
+                borderColor: 'grey.200',
+                background: 'linear-gradient(145deg, #ffffff 0%, #fafafa 100%)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                cursor: card.comingSoon ? 'default' : 'pointer',
                 '&:hover': {
-                  transform: 'translateY(-2px)',
-                  transition: 'transform 0.2s ease-in-out',
+                  transform: card.comingSoon ? 'none' : 'translateY(-4px)',
+                  borderColor: card.comingSoon ? 'grey.200' : 'primary.light',
+                  boxShadow: card.comingSoon ? 'inherit' : '0px 12px 32px rgba(255, 102, 0, 0.15)',
                 },
               }}
             >
@@ -148,9 +161,10 @@ export default function Dashboard() {
                   color="info"
                   sx={{
                     position: 'absolute',
-                    top: 8,
-                    right: 8,
+                    top: 12,
+                    right: 12,
                     zIndex: 1,
+                    borderRadius: 2,
                   }}
                 />
               )}
@@ -162,26 +176,34 @@ export default function Dashboard() {
                   flexDirection: 'column',
                   alignItems: 'center',
                   textAlign: 'center',
-                  p: 3,
+                  p: 4,
                 }}
               >
                 <Box
                   sx={{
-                    color: `${card.color}.main`,
-                    mb: 2,
+                    p: 2,
+                    borderRadius: '50%',
+                    bgcolor: `${card.color}.light`,
+                    color: 'white',
+                    mb: 3,
+                    width: 80,
+                    height: 80,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
                 >
                   {card.icon}
                 </Box>
                 
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
                   {card.title}
                 </Typography>
                 
                 <Typography
                   variant="body2"
                   color="text.secondary"
-                  sx={{ mb: 3, flexGrow: 1 }}
+                  sx={{ mb: 4, flexGrow: 1, lineHeight: 1.6 }}
                 >
                   {card.description}
                 </Typography>
@@ -192,6 +214,11 @@ export default function Dashboard() {
                   disabled={card.comingSoon}
                   fullWidth
                   onClick={card.onClick}
+                  sx={{ 
+                    borderRadius: 3,
+                    py: 1.5,
+                    fontWeight: 600,
+                  }}
                 >
                   {card.action}
                 </Button>
@@ -225,4 +252,4 @@ export default function Dashboard() {
       </Box>
     </Container>
   );
-} 
+}  
