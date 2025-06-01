@@ -67,7 +67,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center', mx: 'auto' }}>
+    <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center' }}>
       {/* Welcome Header */}
       <Box sx={{ mb: 6, textAlign: 'center' }}>
         <Avatar
@@ -252,4 +252,4 @@ export default function Dashboard() {
       </Box>
     </Container>
   );
-}        
+}          

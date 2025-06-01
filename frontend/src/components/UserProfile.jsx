@@ -153,7 +153,7 @@ const UserProfile = () => {
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4, mx: 'auto' }}>
+    <Container maxWidth="lg" sx={{ py: 4 }}>
       {/* Header with Back Button */}
       <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
         <IconButton 
@@ -423,4 +423,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;      
+export default UserProfile;        

@@ -160,7 +160,7 @@ const Recommendations = () => {
   const clearError = () => setError(null);
 
   return (
-    <Container maxWidth="xl" sx={{ py: 4, mx: 'auto' }}>
+    <Container maxWidth="xl" sx={{ py: 4 }}>
       {/* Header */}
       <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
         <IconButton 
@@ -409,4 +409,4 @@ const Recommendations = () => {
   );
 };
 
-export default Recommendations;      
+export default Recommendations;        

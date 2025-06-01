@@ -228,7 +228,7 @@ const Library = () => {
   const totalPages = Math.ceil(totalCount / pageSize);
 
   return (
-    <Container maxWidth="xl" sx={{ py: 4, mx: 'auto' }}>
+    <Container maxWidth="xl" sx={{ py: 4 }}>
       {/* Header */}
       <Box sx={{ mb: 4, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -663,4 +663,4 @@ const Library = () => {
   );
 };
 
-export default Library;        
+export default Library;          

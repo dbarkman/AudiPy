@@ -296,7 +296,7 @@ function LandingPage() {
           },
         }}
       >
-        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1, textAlign: 'center', mx: 'auto' }}>
+        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <Typography variant="h1" gutterBottom sx={{ mb: 3 }}>
             Discover Your Next Great Listen
           </Typography>
@@ -329,7 +329,7 @@ function LandingPage() {
       </Box>
 
       {/* Features Section */}
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 }, textAlign: 'center', mx: 'auto' }} id="features">
+      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 }, textAlign: 'center' }} id="features">
         <Box sx={{ textAlign: 'center', mb: 8 }}>
           <Typography variant="h2" gutterBottom sx={{ mb: 2 }}>
             Powerful Features
@@ -395,7 +395,7 @@ function LandingPage() {
 
       {/* Login Section */}
       <Box sx={{ bgcolor: 'grey.50', py: { xs: 6, md: 10 } }} id="login">
-        <Container maxWidth="md" sx={{ textAlign: 'center', mx: 'auto' }}>
+        <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <Typography variant="h2" textAlign="center" gutterBottom>
             Ready to Get Started?
           </Typography>
@@ -463,11 +463,21 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AuthProvider>
-        <Router>
-          <AppContent />
-        </Router>
-      </AuthProvider>
+      <Box sx={{ 
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '100%'
+      }}>
+        <AuthProvider>
+          <Router>
+            <Box sx={{ width: '100%', maxWidth: '1200px' }}>
+              <AppContent />
+            </Box>
+          </Router>
+        </AuthProvider>
+      </Box>
     </ThemeProvider>
   );
 }
