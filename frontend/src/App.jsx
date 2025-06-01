@@ -38,15 +38,15 @@ import Recommendations from './components/Recommendations';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#ff6600',
-      light: '#ff8533',
-      dark: '#e55a00',
-      contrastText: '#ffffff',
-    },
-    secondary: {
       main: '#1976d2',
       light: '#42a5f5',
       dark: '#1565c0',
+      contrastText: '#ffffff',
+    },
+    secondary: {
+      main: '#26a69a',
+      light: '#4db6ac',
+      dark: '#00695c',
     },
     background: {
       default: '#fafafa',
@@ -156,9 +156,9 @@ const theme = createTheme({
           transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
         },
         contained: {
-          boxShadow: '0px 4px 12px rgba(255, 102, 0, 0.3)',
+          boxShadow: '0px 4px 12px rgba(25, 118, 210, 0.3)',
           '&:hover': {
-            boxShadow: '0px 6px 16px rgba(255, 102, 0, 0.4)',
+            boxShadow: '0px 6px 16px rgba(25, 118, 210, 0.4)',
             transform: 'translateY(-1px)',
           },
         },
@@ -279,7 +279,7 @@ function LandingPage() {
       {/* Hero Section */}
       <Box
         sx={{
-          background: 'linear-gradient(135deg, #ff6600 0%, #ff8533 50%, #ffab66 100%)',
+          background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 50%, #81c784 100%)',
           color: 'white',
           py: { xs: 8, md: 12 },
           textAlign: 'center',
@@ -296,7 +296,7 @@ function LandingPage() {
           },
         }}
       >
-        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
+        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <Typography variant="h1" gutterBottom sx={{ mb: 3 }}>
             Discover Your Next Great Listen
           </Typography>
@@ -329,7 +329,7 @@ function LandingPage() {
       </Box>
 
       {/* Features Section */}
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }} id="features">
+      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 }, textAlign: 'center' }} id="features">
         <Box sx={{ textAlign: 'center', mb: 8 }}>
           <Typography variant="h2" gutterBottom sx={{ mb: 2 }}>
             Powerful Features
@@ -358,7 +358,7 @@ function LandingPage() {
                   '&:hover': {
                     transform: 'translateY(-8px)',
                     borderColor: 'primary.light',
-                    boxShadow: '0px 16px 40px rgba(255, 102, 0, 0.15)',
+                    boxShadow: '0px 16px 40px rgba(25, 118, 210, 0.15)',
                   },
                 }}
               >
@@ -395,7 +395,7 @@ function LandingPage() {
 
       {/* Login Section */}
       <Box sx={{ bgcolor: 'grey.50', py: { xs: 6, md: 10 } }} id="login">
-        <Container maxWidth="md">
+        <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <Typography variant="h2" textAlign="center" gutterBottom>
             Ready to Get Started?
           </Typography>

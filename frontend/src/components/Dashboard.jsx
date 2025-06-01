@@ -67,7 +67,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center' }}>
       {/* Welcome Header */}
       <Box sx={{ mb: 6, textAlign: 'center' }}>
         <Avatar
@@ -78,7 +78,7 @@ export default function Dashboard() {
             mb: 3,
             bgcolor: 'primary.main',
             fontSize: '2.5rem',
-            boxShadow: '0px 8px 24px rgba(255, 102, 0, 0.3)',
+            boxShadow: '0px 8px 24px rgba(25, 118, 210, 0.3)',
           }}
         >
           {user?.username?.charAt(0)?.toUpperCase() || 'U'}
@@ -150,7 +150,7 @@ export default function Dashboard() {
                 '&:hover': {
                   transform: card.comingSoon ? 'none' : 'translateY(-4px)',
                   borderColor: card.comingSoon ? 'grey.200' : 'primary.light',
-                  boxShadow: card.comingSoon ? 'inherit' : '0px 12px 32px rgba(255, 102, 0, 0.15)',
+                  boxShadow: card.comingSoon ? 'inherit' : '0px 12px 32px rgba(25, 118, 210, 0.15)',
                 },
               }}
             >
@@ -252,4 +252,4 @@ export default function Dashboard() {
       </Box>
     </Container>
   );
-}  
+}      

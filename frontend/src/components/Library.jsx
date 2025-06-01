@@ -40,13 +40,16 @@ import {
   Schedule as ScheduleIcon,
   Language as LanguageIcon,
   MoreVert as MoreVertIcon,
-  Refresh as RefreshIcon
+  Refresh as RefreshIcon,
+  ArrowBack as ArrowBackIcon
 } from '@mui/icons-material';
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 
 const Library = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   
   // State for library data
   const [books, setBooks] = useState([]);
@@ -225,16 +228,31 @@ const Library = () => {
   const totalPages = Math.ceil(totalCount / pageSize);
 
   return (
-    <Container maxWidth="xl" sx={{ py: 4 }}>
+    <Container maxWidth="xl" sx={{ py: 4, mx: 'auto' }}>
       {/* Header */}
       <Box sx={{ mb: 4, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Box>
-          <Typography variant="h4" component="h1" gutterBottom>
-            My Library
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {totalCount} books • Last sync: {syncStatus.last_sync ? formatDate(syncStatus.last_sync) : 'Never'}
-          </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <IconButton 
+            onClick={() => navigate('/')}
+            sx={{ 
+              mr: 1,
+              bgcolor: 'primary.light',
+              color: 'white',
+              '&:hover': {
+                bgcolor: 'primary.main',
+              },
+            }}
+          >
+            <ArrowBackIcon />
+          </IconButton>
+          <Box>
+            <Typography variant="h4" component="h1" gutterBottom>
+              My Library
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              {totalCount} books • Last sync: {syncStatus.last_sync ? formatDate(syncStatus.last_sync) : 'Never'}
+            </Typography>
+          </Box>
         </Box>
         
         <Box sx={{ display: 'flex', gap: 2 }}>
@@ -376,7 +394,7 @@ const Library = () => {
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                     '&:hover': {
                       borderColor: 'primary.light',
-                      boxShadow: '0px 12px 32px rgba(255, 102, 0, 0.15)',
+                      boxShadow: '0px 12px 32px rgba(25, 118, 210, 0.15)',
                       transform: 'translateY(-4px)',
                     }
                   }}
@@ -645,4 +663,4 @@ const Library = () => {
   );
 };
 
-export default Library;  
+export default Library;        

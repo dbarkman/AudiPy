@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   Box,
+  Container,
   Typography,
   Button,
   Card,
@@ -26,13 +27,16 @@ import {
   Schedule,
   Person,
   RecordVoiceOver,
-  MenuBook
+  MenuBook,
+  ArrowBack as ArrowBackIcon
 } from '@mui/icons-material';
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 
 const Recommendations = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -156,16 +160,31 @@ const Recommendations = () => {
   const clearError = () => setError(null);
 
   return (
-    <Box sx={{ p: 3 }}>
+    <Container maxWidth="xl" sx={{ py: 4, mx: 'auto' }}>
       {/* Header */}
-      <Box sx={{ mb: 3 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          <AutoAwesome sx={{ mr: 1, verticalAlign: 'middle' }} />
-          Recommendations
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Personalized book recommendations based on your library
-        </Typography>
+      <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
+        <IconButton 
+          onClick={() => navigate('/')}
+          sx={{ 
+            mr: 1,
+            bgcolor: 'primary.light',
+            color: 'white',
+            '&:hover': {
+              bgcolor: 'primary.main',
+            },
+          }}
+        >
+          <ArrowBackIcon />
+        </IconButton>
+        <Box>
+          <Typography variant="h4" component="h1" gutterBottom>
+            <AutoAwesome sx={{ mr: 1, verticalAlign: 'middle' }} />
+            Recommendations
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            Personalized book recommendations based on your library
+          </Typography>
+        </Box>
       </Box>
 
       {/* Controls */}
@@ -271,7 +290,7 @@ const Recommendations = () => {
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   '&:hover': {
                     borderColor: 'primary.light',
-                    boxShadow: '0px 12px 32px rgba(255, 102, 0, 0.15)',
+                    boxShadow: '0px 12px 32px rgba(25, 118, 210, 0.15)',
                     transform: 'translateY(-4px)',
                   }
                 }}>
@@ -386,8 +405,8 @@ const Recommendations = () => {
           </Button>
         </Box>
       )}
-    </Box>
+    </Container>
   );
 };
 
-export default Recommendations;  
+export default Recommendations;      

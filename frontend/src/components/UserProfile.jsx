@@ -28,11 +28,14 @@ import {
   LibraryBooks as LibraryIcon,
   Recommend as RecommendIcon,
   Save as SaveIcon,
-  Sync as SyncIcon
+  Sync as SyncIcon,
+  ArrowBack as ArrowBackIcon
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 
 const UserProfile = () => {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState(null);
   const [preferences, setPreferences] = useState({
     language: 'english',
@@ -150,7 +153,27 @@ const UserProfile = () => {
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth="lg" sx={{ py: 4, mx: 'auto' }}>
+      {/* Header with Back Button */}
+      <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
+        <IconButton 
+          onClick={() => navigate('/')}
+          sx={{ 
+            mr: 1,
+            bgcolor: 'primary.light',
+            color: 'white',
+            '&:hover': {
+              bgcolor: 'primary.main',
+            },
+          }}
+        >
+          <ArrowBackIcon />
+        </IconButton>
+        <Typography variant="h4" component="h1">
+          User Profile
+        </Typography>
+      </Box>
+
       {message && (
         <Alert 
           severity={message.type} 
@@ -179,7 +202,7 @@ const UserProfile = () => {
                 mx: 'auto', 
                 mb: 3,
                 bgcolor: 'primary.main',
-                boxShadow: '0px 8px 24px rgba(255, 102, 0, 0.3)',
+                boxShadow: '0px 8px 24px rgba(25, 118, 210, 0.3)',
               }}
             >
               <PersonIcon sx={{ fontSize: 48 }} />
@@ -400,4 +423,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;  
+export default UserProfile;      
