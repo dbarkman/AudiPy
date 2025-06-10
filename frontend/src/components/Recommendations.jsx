@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   Box,
+  Container,
   Typography,
   Button,
   Card,
@@ -26,13 +27,16 @@ import {
   Schedule,
   Person,
   RecordVoiceOver,
-  MenuBook
+  MenuBook,
+  ArrowBack as ArrowBackIcon
 } from '@mui/icons-material';
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 
 const Recommendations = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -156,16 +160,31 @@ const Recommendations = () => {
   const clearError = () => setError(null);
 
   return (
-    <Box sx={{ p: 3 }}>
+    <Container maxWidth="xl" sx={{ py: 4 }}>
       {/* Header */}
-      <Box sx={{ mb: 3 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          <AutoAwesome sx={{ mr: 1, verticalAlign: 'middle' }} />
-          Recommendations
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Personalized book recommendations based on your library
-        </Typography>
+      <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
+        <IconButton 
+          onClick={() => navigate('/')}
+          sx={{ 
+            mr: 1,
+            bgcolor: 'primary.light',
+            color: 'white',
+            '&:hover': {
+              bgcolor: 'primary.main',
+            },
+          }}
+        >
+          <ArrowBackIcon />
+        </IconButton>
+        <Box>
+          <Typography variant="h4" component="h1" gutterBottom>
+            <AutoAwesome sx={{ mr: 1, verticalAlign: 'middle' }} />
+            Recommendations
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            Personalized book recommendations based on your library
+          </Typography>
+        </Box>
       </Box>
 
       {/* Controls */}
@@ -261,10 +280,23 @@ const Recommendations = () => {
           <Grid container spacing={3}>
             {recommendations.map((rec) => (
               <Grid item xs={12} sm={6} md={4} key={`${rec.asin}-${rec.recommendation_type}-${rec.source_name}`}>
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <CardContent sx={{ flexGrow: 1 }}>
+                <Card sx={{ 
+                  height: '100%', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  border: '1px solid',
+                  borderColor: 'grey.200',
+                  borderRadius: 3,
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  '&:hover': {
+                    borderColor: 'primary.light',
+                    boxShadow: '0px 12px 32px rgba(25, 118, 210, 0.15)',
+                    transform: 'translateY(-4px)',
+                  }
+                }}>
+                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
                     {/* Book Title */}
-                    <Typography variant="h6" component="h3" gutterBottom noWrap>
+                    <Typography variant="h6" component="h3" gutterBottom noWrap sx={{ fontWeight: 600 }}>
                       {rec.title}
                     </Typography>
                     
@@ -305,23 +337,26 @@ const Recommendations = () => {
                     <Divider sx={{ my: 2 }} />
 
                     {/* Recommendation Info */}
-                    <Box sx={{ display: 'flex', gap: 1, mb: 1, flexWrap: 'wrap' }}>
+                    <Box sx={{ display: 'flex', gap: 1, mb: 2, flexWrap: 'wrap' }}>
                       <Chip
                         icon={getTypeIcon(rec.recommendation_type)}
                         label={rec.recommendation_type}
                         size="small"
                         color="primary"
                         variant="outlined"
+                        sx={{ borderRadius: 2 }}
                       />
                       <Chip
                         label={`${(rec.confidence_score * 100).toFixed(0)}% match`}
                         size="small"
                         color={getConfidenceColor(rec.confidence_score)}
+                        sx={{ borderRadius: 2 }}
                       />
                       <Chip
                         label={rec.purchase_method}
                         size="small"
                         color={rec.purchase_method === 'cash' ? 'success' : 'default'}
+                        sx={{ borderRadius: 2 }}
                       />
                     </Box>
 
@@ -370,8 +405,8 @@ const Recommendations = () => {
           </Button>
         </Box>
       )}
-    </Box>
+    </Container>
   );
 };
 
-export default Recommendations; 
+export default Recommendations;        
