@@ -28,11 +28,14 @@ import {
   LibraryBooks as LibraryIcon,
   Recommend as RecommendIcon,
   Save as SaveIcon,
-  Sync as SyncIcon
+  Sync as SyncIcon,
+  ArrowBack as ArrowBackIcon
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 
 const UserProfile = () => {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState(null);
   const [preferences, setPreferences] = useState({
     language: 'english',
@@ -151,6 +154,26 @@ const UserProfile = () => {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
+      {/* Header with Back Button */}
+      <Box sx={{ mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
+        <IconButton 
+          onClick={() => navigate('/')}
+          sx={{ 
+            mr: 1,
+            bgcolor: 'primary.light',
+            color: 'white',
+            '&:hover': {
+              bgcolor: 'primary.main',
+            },
+          }}
+        >
+          <ArrowBackIcon />
+        </IconButton>
+        <Typography variant="h4" component="h1">
+          User Profile
+        </Typography>
+      </Box>
+
       {message && (
         <Alert 
           severity={message.type} 
@@ -164,46 +187,55 @@ const UserProfile = () => {
       <Grid container spacing={3}>
         {/* Profile Overview */}
         <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 3, textAlign: 'center' }}>
+          <Paper sx={{ 
+            p: 4, 
+            textAlign: 'center',
+            borderRadius: 3,
+            border: '1px solid',
+            borderColor: 'grey.200',
+            background: 'linear-gradient(145deg, #ffffff 0%, #fafafa 100%)',
+          }}>
             <Avatar
               sx={{ 
-                width: 80, 
-                height: 80, 
+                width: 100, 
+                height: 100, 
                 mx: 'auto', 
-                mb: 2,
-                bgcolor: 'primary.main'
+                mb: 3,
+                bgcolor: 'primary.main',
+                boxShadow: '0px 8px 24px rgba(25, 118, 210, 0.3)',
               }}
             >
-              <PersonIcon sx={{ fontSize: 40 }} />
+              <PersonIcon sx={{ fontSize: 48 }} />
             </Avatar>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
               {profile?.username || 'User'}
             </Typography>
             <Typography variant="body2" color="text.secondary" gutterBottom>
               Member since {formatDate(profile?.created_at)}
             </Typography>
             
-            <Divider sx={{ my: 2 }} />
+            <Divider sx={{ my: 3 }} />
             
             {/* Account Status */}
-            <Box sx={{ mb: 2 }}>
-              <Typography variant="subtitle2" gutterBottom>
+            <Box sx={{ mb: 3 }}>
+              <Typography variant="subtitle2" gutterBottom sx={{ fontWeight: 600 }}>
                 Audible Account
               </Typography>
               <Chip
                 label={status?.sync?.sync_status || 'Not Connected'}
                 color={getStatusColor(status?.sync?.sync_status)}
                 size="small"
+                sx={{ borderRadius: 2 }}
               />
             </Box>
 
             {/* Quick Stats */}
             <Grid container spacing={2} sx={{ mt: 2 }}>
               <Grid item xs={6}>
-                <Card variant="outlined">
+                <Card variant="outlined" sx={{ borderRadius: 2 }}>
                   <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                     <LibraryIcon color="primary" sx={{ mb: 1 }} />
-                    <Typography variant="h6">
+                    <Typography variant="h6" sx={{ fontWeight: 600 }}>
                       {status?.library?.total_books || 0}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
@@ -213,10 +245,10 @@ const UserProfile = () => {
                 </Card>
               </Grid>
               <Grid item xs={6}>
-                <Card variant="outlined">
+                <Card variant="outlined" sx={{ borderRadius: 2 }}>
                   <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                     <RecommendIcon color="primary" sx={{ mb: 1 }} />
-                    <Typography variant="h6">
+                    <Typography variant="h6" sx={{ fontWeight: 600 }}>
                       {status?.recommendations?.total_recommendations || 0}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
@@ -391,4 +423,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile; 
+export default UserProfile;        
