@@ -9,7 +9,7 @@ you only complete the interactive login (including OTP) once.
 from __future__ import annotations
 
 import getpass
-from typing import Optional
+from collections.abc import Iterator
 
 from audible import Authenticator, Client
 from rich.console import Console
@@ -17,6 +17,9 @@ from rich.console import Console
 from audipy.config import Config
 
 console = Console()
+
+# Max items the Audible library endpoint returns per page.
+PAGE_SIZE = 1000
 
 
 class NotAuthenticatedError(RuntimeError):
@@ -104,10 +107,28 @@ def prompt_credentials(default_marketplace: str) -> tuple[str, str, str]:
     return username, password, marketplace
 
 
-def library_size(config: Config) -> Optional[int]:
-    """Return the total number of books in the library (auth smoke test)."""
+def iter_library_items(config: Config, response_groups: str) -> Iterator[dict]:
+    """Yield every book in the library, paging through the API.
+
+    The library endpoint no longer returns a ``total_size``, so counting and
+    syncing both work by paging until a short page signals the end.
+    """
     client = get_client(config)
-    resp = client.get("1.0/library", num_results=1, response_groups="product_desc")
-    if not resp:
-        return None
-    return resp.get("total_size")
+    page = 1
+    while True:
+        resp = client.get(
+            "1.0/library",
+            num_results=PAGE_SIZE,
+            page=page,
+            response_groups=response_groups,
+        )
+        items = resp.get("items", []) if isinstance(resp, dict) else []
+        yield from items
+        if len(items) < PAGE_SIZE:
+            return
+        page += 1
+
+
+def count_library(config: Config) -> int:
+    """Return the number of books in the library (auth/API smoke test)."""
+    return sum(1 for _ in iter_library_items(config, response_groups="product_desc"))

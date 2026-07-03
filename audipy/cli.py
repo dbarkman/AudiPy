@@ -58,13 +58,10 @@ def logout() -> None:
 def _report_library_size(config: Config) -> None:
     """Fetch the library size as a smoke test and print the result."""
     try:
-        size = audible_client.library_size(config)
+        size = audible_client.count_library(config)
     except Exception as exc:  # noqa: BLE001
         console.print(f"[red]❌ API access failed:[/] {exc}")
         raise typer.Exit(code=1) from exc
-    if size is None:
-        console.print("[red]❌ API responded but returned no library data.[/]")
-        raise typer.Exit(code=1)
     console.print(f"[bold green]📚 API access confirmed — {size} books in your library.[/]")
 
 
