@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
+import dataclasses
+
 import typer
 from rich.console import Console
+from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 
 from audipy import audible_client
+from audipy import recommend as recommend_module
 from audipy import sync as sync_module
 from audipy.config import Config
 
@@ -60,6 +64,59 @@ def sync() -> None:
         console.print(f"[red]❌ Sync failed:[/] {exc}")
         raise typer.Exit(code=1) from exc
     console.print(f"[bold green]✅ Synced {count} books[/] → {config.db_file}")
+
+
+@app.command()
+def recommend(
+    authors: int = typer.Option(None, help="Number of top authors to use (default from config)."),
+    narrators: int = typer.Option(None, help="Number of top narrators to use."),
+    series: int = typer.Option(None, help="Number of top series to use."),
+) -> None:
+    """Generate recommendations from your synced library."""
+    config = Config.load()
+    if not config.db_file.exists():
+        console.print("[yellow]No library synced yet.[/] Run [bold]audipy sync[/] first.")
+        raise typer.Exit(code=1)
+    overrides = {}
+    if authors is not None:
+        overrides["top_authors"] = authors
+    if narrators is not None:
+        overrides["top_narrators"] = narrators
+    if series is not None:
+        overrides["top_series"] = series
+    if overrides:
+        config = dataclasses.replace(config, **overrides)
+
+    console.print(
+        f"[blue]🔎 Finding books via your top {config.top_series} series, "
+        f"{config.top_authors} authors, {config.top_narrators} narrators…[/]"
+    )
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        TextColumn("{task.completed}/{task.total}"),
+        console=console,
+    ) as progress:
+        tasks: dict[str, int] = {}
+        labels = {"series": "series", "author": "authors", "narrator": "narrators"}
+
+        def on_progress(rec_type: str, idx: int, total: int) -> None:
+            if rec_type not in tasks:
+                tasks[rec_type] = progress.add_task(f"Searching {labels[rec_type]}", total=total)
+            progress.update(tasks[rec_type], completed=idx)
+
+        try:
+            counts = recommend_module.generate(config, progress=on_progress)
+        except Exception as exc:  # noqa: BLE001
+            console.print(f"[red]❌ Recommendation run failed:[/] {exc}")
+            raise typer.Exit(code=1) from exc
+
+    console.print(
+        f"[bold green]✅ Found[/] {counts['series']} series, "
+        f"{counts['author']} author, {counts['narrator']} narrator recommendations."
+    )
+    console.print("[dim]Run [bold]audipy report[/] to see them.[/]")
 
 
 @app.command()
