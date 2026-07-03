@@ -6,6 +6,7 @@ import typer
 from rich.console import Console
 
 from audipy import audible_client
+from audipy import sync as sync_module
 from audipy.config import Config
 
 app = typer.Typer(
@@ -42,6 +43,23 @@ def status() -> None:
         raise typer.Exit(code=1)
     console.print(f"[dim]Token cache: {config.auth_file}[/]")
     _report_library_size(config)
+
+
+@app.command()
+def sync() -> None:
+    """Fetch your Audible library into the local database."""
+    config = Config.load()
+    if not config.auth_file.exists():
+        console.print("[yellow]Not logged in.[/] Run [bold]audipy login[/] first.")
+        raise typer.Exit(code=1)
+    console.print("[blue]📥 Syncing your Audible library…[/]")
+    try:
+        with console.status("Fetching from Audible…"):
+            count = sync_module.sync_library(config)
+    except Exception as exc:  # noqa: BLE001
+        console.print(f"[red]❌ Sync failed:[/] {exc}")
+        raise typer.Exit(code=1) from exc
+    console.print(f"[bold green]✅ Synced {count} books[/] → {config.db_file}")
 
 
 @app.command()
