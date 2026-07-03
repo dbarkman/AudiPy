@@ -1,0 +1,1659 @@
+{
+  "product_filters": [],
+  "products": [
+    {
+      "asin": "B0F8P6X1KR",
+      "authors": [
+        {
+          "asin": "B09MV5DTRC",
+          "name": "Zogarth"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580615011",
+              "name": "Epic"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580628011",
+              "name": "Science Fiction"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "MultiPartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": true,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-06-11",
+      "language": "english",
+      "merchandising_summary": "<p>The Nevermore Leaderboards competition has gathered more attention than perhaps in any era prior, with gods getting both directly and indirectly involved to see who will eventually come out on top.</p>",
+      "narrators": [
+        {
+          "name": "Travis Baldree"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 29.950000762939453,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 20.959999084472656,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/515-hGDDBDL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-06-11T07:00:00Z",
+      "publication_name": "The Primal Hunter",
+      "publisher_name": "Aethon Audio",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-06-11",
+      "runtime_length_min": 1207,
+      "series": [
+        {
+          "asin": "B09MZKWFTB",
+          "sequence": "12",
+          "title": "The Primal Hunter",
+          "url": "/pd/The-Primal-Hunter-Audiobook/B09MZKWFTB"
+        }
+      ],
+      "sku": "BK_ACX0_450795",
+      "sku_lite": "BK_ACX0_450795",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/515-hGDDBDL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C515-hGDDBDL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/515-hGDDBDL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/515-hGDDBDL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C515-hGDDBDL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBThe%20Primal%20Hunter%2012,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBZogarth,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C515-hGDDBDL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAThe%20Primal%20Hunt...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Zogarth,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/515-hGDDBDL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C515-hGDDBDL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "A LitRPG Adventure",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "The Primal Hunter 12"
+    },
+    {
+      "asin": "B0F94GTPGV",
+      "authors": [
+        {
+          "asin": "B095VFL8JN",
+          "name": "Cassius Lange"
+        },
+        {
+          "asin": "B086D3RTG5",
+          "name": "Ryan Tang"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580619011",
+              "name": "Humorous"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "MultiPartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": true,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-06-03",
+      "language": "english",
+      "merchandising_summary": "<p>Chester, as it turns out, is actually a monster god. Unfortunately, we don\u2019t have any time to throw festivals in his honor\u2014the whole world has gone mad and is overflowing with corrupted monsters. </p>",
+      "narrators": [
+        {
+          "name": "Ryan H. Reid"
+        },
+        {
+          "name": "Jeff Hays"
+        },
+        {
+          "name": "Dorrie Sacks"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 24.950000762939453,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 17.459999084472656,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51aEtniQAeL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-06-03T07:00:00Z",
+      "publication_name": "Mimic & Me",
+      "publisher_name": "Soundbooth Theater",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-06-03",
+      "runtime_length_min": 944,
+      "series": [
+        {
+          "asin": "B0CDJ3H6XM",
+          "sequence": "4",
+          "title": "Mimic & Me",
+          "url": "/pd/Mimic-Me-Audiobook/B0CDJ3H6XM"
+        }
+      ],
+      "sku": "BK_ACX0_451409",
+      "sku_lite": "BK_ACX0_451409",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51aEtniQAeL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51aEtniQAeL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51aEtniQAeL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51aEtniQAeL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51aEtniQAeL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBMimic%20%26%20Me%204,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBCassius%20Lange%252C%20Ryan%20Tang,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51aEtniQAeL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAMimic%20%26%20Me%204,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Cassius%20Lange%252C%20Rya...,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51aEtniQAeL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51aEtniQAeL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "A LitRPG Adventure",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Mimic & Me 4"
+    },
+    {
+      "asin": "B0F6YZ6WYR",
+      "authors": [
+        {
+          "asin": "B0C9MXQ7Z7",
+          "name": "Leigh Rivers"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18573351011",
+              "name": "Erotica"
+            },
+            {
+              "id": "18573352011",
+              "name": "Literature & Fiction"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "18573351011",
+              "name": "Erotica"
+            },
+            {
+              "id": "18573352011",
+              "name": "Literature & Fiction"
+            },
+            {
+              "id": "18573362011",
+              "name": "Romantic"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "18580518011",
+              "name": "Romance"
+            },
+            {
+              "id": "18580536011",
+              "name": "Romantic Suspense"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": true,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-05-28",
+      "language": "english",
+      "merchandising_summary": "<p>Malachi Vize has always had one desire in life. One goal. One deep obsession he could never give up on. His foster sister Olivia.</p>",
+      "narrators": [
+        {
+          "name": "Heather Firth"
+        },
+        {
+          "name": "Grayson Owens"
+        },
+        {
+          "name": "Shane East"
+        },
+        {
+          "name": "Michelle Sparks"
+        },
+        {
+          "name": "JF Harding"
+        },
+        {
+          "name": "Sean Masters"
+        },
+        {
+          "name": "Aaron Shedlock"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 24.950000762939453,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 17.459999084472656,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51VK4osxczL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-05-28T07:00:00Z",
+      "publication_name": "The Web of Silence Duet",
+      "publisher_name": "Leigh Rivers",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-05-28",
+      "runtime_length_min": 605,
+      "series": [
+        {
+          "asin": "B0F75MZQJV",
+          "sequence": "2",
+          "title": "The Web of Silence Duet",
+          "url": "/pd/The-Web-of-Silence-Duet-Audiobook/B0F75MZQJV"
+        }
+      ],
+      "sku": "BK_ACX0_448255",
+      "sku_lite": "BK_ACX0_448255",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51VK4osxczL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51VK4osxczL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51VK4osxczL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51VK4osxczL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51VK4osxczL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBLittle%20Liar,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBLeigh%20Rivers,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51VK4osxczL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZALittle%20Liar,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Leigh%20Rivers,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51VK4osxczL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51VK4osxczL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "A Dark Taboo Romance (The Web of Silence Duet, Book 2)",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Little Liar"
+    },
+    {
+      "asin": "B0F6VVC8QX",
+      "authors": [
+        {
+          "asin": "B07XCYVYMW",
+          "name": "pirateaba"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580608011",
+              "name": "Action & Adventure"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580615011",
+              "name": "Epic"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580619011",
+              "name": "Humorous"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-07-29",
+      "language": "english",
+      "merchandising_summary": "<p><i>King of Duels </i>marks the passing of the torch from our beloved Andrea Parsneau to a new narrator. Erin Bennett, a Golden Voice narrator, will continue to bring the magic of The Wandering Inn to life.</p>",
+      "narrators": [
+        {
+          "name": "Erin Bennett"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 59.9900016784668,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 41.9900016784668,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.46999979019165,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51IGcxappGL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-07-29T07:00:00Z",
+      "publication_name": "The Wandering Inn",
+      "publisher_name": "Podium Audio",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-07-29",
+      "runtime_length_min": 2050,
+      "series": [
+        {
+          "asin": "B07X3TZ2YQ",
+          "sequence": "16",
+          "title": "The Wandering Inn",
+          "url": "/pd/The-Wandering-Inn-Audiobook/B07X3TZ2YQ"
+        }
+      ],
+      "sku": "BK_PODM_010433",
+      "sku_lite": "BK_PODM_010433",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51IGcxappGL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51IGcxappGL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51IGcxappGL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51IGcxappGL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51IGcxappGL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBKing%20of%20Duels,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBpirateaba,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51IGcxappGL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAKing%20of%20Duels,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20pirateaba,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51IGcxappGL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51IGcxappGL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "The Wandering Inn, Book 16",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "King of Duels"
+    },
+    {
+      "asin": "B0F8WCSBPR",
+      "authors": [
+        {
+          "name": "Charlotte Blake"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18572091011",
+              "name": "Children's Audiobooks"
+            },
+            {
+              "id": "18572491011",
+              "name": "Literature & Fiction"
+            },
+            {
+              "id": "18572493011",
+              "name": "Anthologies & Short Stories"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "18572091011",
+              "name": "Children's Audiobooks"
+            },
+            {
+              "id": "18572491011",
+              "name": "Literature & Fiction"
+            },
+            {
+              "id": "18572494011",
+              "name": "Bedtime & Dreaming"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-05-19",
+      "language": "english",
+      "merchandising_summary": "<p>Bedtime is a special time for connection, relaxation, and storytelling. <i>Moonlight Whispers</i> is a collection of short, soothing stories designed to help children wind down, feel comforted, and drift into a peaceful sleep.</p>",
+      "narrators": [
+        {
+          "name": "Charlotte Blake"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 24.950000762939453,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 17.459999084472656,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.46999979019165,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/510rZd--MWL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-05-19T15:46:00Z",
+      "publisher_name": "Henry Clarke",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-05-19",
+      "runtime_length_min": 607,
+      "sku": "BK_ACX0_449307",
+      "sku_lite": "BK_ACX0_449307",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/510rZd--MWL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C510rZd--MWL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/510rZd--MWL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/510rZd--MWL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C510rZd--MWL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBMoonlight%20Whispers,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBCharlotte%20Blake,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C510rZd--MWL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAMoonlight%20Whispers,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Charlotte%20Blake,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/510rZd--MWL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C510rZd--MWL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Moonlight Whispers"
+    },
+    {
+      "asin": "B0F7Z6M6LG",
+      "authors": [
+        {
+          "asin": "B0BDGNY4ZH",
+          "name": "C. Mantis"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580615011",
+              "name": "Epic"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "MultiPartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": true,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-06-04",
+      "language": "english",
+      "merchandising_summary": "<p>With Light and Shadow completing the Path of Ascension, three foreign Great Powers equal to the Empire in power have declared war. Thankfully they aren't alone but with only one ally in their corner their best hope is to fight for a close loss.</p>",
+      "narrators": [
+        {
+          "name": "J.S. Arquin"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 29.950000762939453,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 20.959999084472656,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/518zZL-Nd5L._SL500_.jpg"
+      },
+      "publication_datetime": "2025-06-04T07:00:00Z",
+      "publication_name": "The Path of Ascension",
+      "publisher_name": "Aethon Audio",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-06-04",
+      "runtime_length_min": 1287,
+      "series": [
+        {
+          "asin": "B0BV3CNHF9",
+          "sequence": "9",
+          "title": "The Path of Ascension",
+          "url": "/pd/The-Path-of-Ascension-Audiobook/B0BV3CNHF9"
+        }
+      ],
+      "sku": "BK_ACX0_449691",
+      "sku_lite": "BK_ACX0_449691",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/518zZL-Nd5L._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C518zZL-Nd5L.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/518zZL-Nd5L._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/518zZL-Nd5L._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C518zZL-Nd5L.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBThe%20Path%20of%20Ascension%209,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBC.%20Mantis,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C518zZL-Nd5L.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAThe%20Path%20of%20Asc...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20C.%20Mantis,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/518zZL-Nd5L._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C518zZL-Nd5L.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "A LitRPG Adventure",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "The Path of Ascension 9"
+    },
+    {
+      "asin": "B0F8W8MS21",
+      "authors": [
+        {
+          "asin": "B00G2PREA6",
+          "name": "Meghan Quinn"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18580518011",
+              "name": "Romance"
+            },
+            {
+              "id": "18580535011",
+              "name": "Romantic Comedy"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "24427740011",
+              "name": "Comedy & Humor"
+            },
+            {
+              "id": "18571927011",
+              "name": "Performing Arts"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-06-03",
+      "language": "english",
+      "merchandising_summary": "<p>Scottie Price just started a new job and it's a real sausage fest. She's the only woman on a team filled with Brads and Chads. Expecting a bachelor pad atmosphere, she is quickly corrected when she finds out everyone is happily married.</p>",
+      "narrators": [
+        {
+          "name": "Erin Mallon"
+        },
+        {
+          "name": "Teddy Hamilton"
+        },
+        {
+          "name": "Stephen Dexter"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 24.950000762939453,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 17.459999084472656,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51NZ1Yne1tL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-06-03T07:00:00Z",
+      "publisher_name": "Hot-Lanta Publishing, LLC",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-06-03",
+      "runtime_length_min": 710,
+      "sku": "BK_ACX0_451292",
+      "sku_lite": "BK_ACX0_451292",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51NZ1Yne1tL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51NZ1Yne1tL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51NZ1Yne1tL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51NZ1Yne1tL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51NZ1Yne1tL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBTill%20Summer%20Do%20Us%20Part,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBMeghan%20Quinn,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51NZ1Yne1tL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZATill%20Summer%20Do%20...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Meghan%20Quinn,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51NZ1Yne1tL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51NZ1Yne1tL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Till Summer Do Us Part"
+    },
+    {
+      "asin": "B0F514WLWD",
+      "authors": [
+        {
+          "asin": "B004QTNFOO",
+          "name": "Terry Mancour"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580608011",
+              "name": "Action & Adventure"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580615011",
+              "name": "Epic"
+            }
+          ],
+          "root": "Genres"
+        },
+        {
+          "ladder": [
+            {
+              "id": "18580606011",
+              "name": "Science Fiction & Fantasy"
+            },
+            {
+              "id": "18580607011",
+              "name": "Fantasy"
+            },
+            {
+              "id": "18580622011",
+              "name": "Paranormal & Urban"
+            },
+            {
+              "id": "18580624011",
+              "name": "Paranormal"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-07-15",
+      "language": "english",
+      "merchandising_summary": "<p>\"Lilastien is missing.\" That's how Master Minalan the Spellmonger, the greatest wizard of the age, began the mission for his two former apprentices, Tyndal and Rondal. </p>",
+      "narrators": [
+        {
+          "name": "John Lee"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 49.900001525878906,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 34.93000030517578,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.46999979019165,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51kIl8rBhmL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-07-15T07:00:00Z",
+      "publication_name": "Spellmonger",
+      "publisher_name": "Podium Audio",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-07-15",
+      "runtime_length_min": 1140,
+      "series": [
+        {
+          "asin": "B01N385K2X",
+          "sequence": "",
+          "title": "Spellmonger",
+          "url": "/pd/Spellmonger-Audiobook/B01N385K2X"
+        }
+      ],
+      "sku": "BK_PODM_010319",
+      "sku_lite": "BK_PODM_010319",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51kIl8rBhmL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51kIl8rBhmL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51kIl8rBhmL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51kIl8rBhmL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51kIl8rBhmL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBThe%20Golden%20Goblin,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBTerry%20Mancour,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51kIl8rBhmL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAThe%20Golden%20Goblin,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Terry%20Mancour,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51kIl8rBhmL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51kIl8rBhmL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "A Spellmonger Novel",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "The Golden Goblin"
+    },
+    {
+      "asin": "B0F7RVPS2S",
+      "authors": [
+        {
+          "asin": "B000APT7Y0",
+          "name": "J. D. Robb"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18574597011",
+              "name": "Mystery, Thriller & Suspense"
+            },
+            {
+              "id": "18574606011",
+              "name": "Mystery"
+            },
+            {
+              "id": "18574617011",
+              "name": "Police Procedurals"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2026-02-03",
+      "language": "english",
+      "merchandising_summary": "<p>A violent death and a vault of stolen treasures has Eve Dallas struggling to solve crimes old and new in the latest thriller in the #1 <i>New York Times</i>-bestselling series.</p>",
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 20.239999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 14.170000076293945,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.46999979019165,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51-9fYi69LL._SL500_.jpg"
+      },
+      "publication_datetime": "2026-02-03T08:00:00Z",
+      "publication_name": "In Death",
+      "publisher_name": "Macmillan Audio",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2026-02-03",
+      "runtime_length_min": 720,
+      "series": [
+        {
+          "asin": "B005NAJPVW",
+          "sequence": "62",
+          "title": "In Death",
+          "url": "/pd/In-Death-Audiobook/B005NAJPVW"
+        }
+      ],
+      "sku": "BK_AREN_007698",
+      "sku_lite": "BK_AREN_007698",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51-9fYi69LL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51-9fYi69LL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51-9fYi69LL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51-9fYi69LL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51-9fYi69LL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBStolen%20in%20Death,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBJ.%20D.%20Robb,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51-9fYi69LL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAStolen%20in%20Death,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20J.%20D.%20Robb,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51-9fYi69LL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51-9fYi69LL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "In Death",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Stolen in Death"
+    },
+    {
+      "asin": "B0F6G83NST",
+      "authors": [
+        {
+          "asin": "B00HYKBU1W",
+          "name": "Rebecca Yarros"
+        }
+      ],
+      "category_ladders": [
+        {
+          "ladder": [
+            {
+              "id": "18580518011",
+              "name": "Romance"
+            },
+            {
+              "id": "18580523011",
+              "name": "Fantasy"
+            }
+          ],
+          "root": "Genres"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Performance",
+      "format_type": "original_recording",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-07-02",
+      "language": "english",
+      "merchandising_summary": "<p>After nearly eighteen months at Basgiath War College, Violet Sorrengail knows there\u2019s no more time for lessons. No more time for uncertainty. Because the battle has truly begun, and with enemies closing in from outside their walls and within their ranks, it\u2019s impossible to know who to trust.</p>",
+      "narrators": [
+        {
+          "name": "full cast"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 20.0,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 14.0,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.46999979019165,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51I9Z8QbljL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-07-02T07:00:00Z",
+      "publication_name": "The Empyrean",
+      "publisher_name": "Graphic Audio LLC",
+      "rating": {
+        "num_reviews": 0,
+        "overall_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "performance_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        },
+        "story_distribution": {
+          "average_rating": 0.0,
+          "display_average_rating": "0.0",
+          "display_stars": 0.0,
+          "num_five_star_ratings": 0,
+          "num_four_star_ratings": 0,
+          "num_one_star_ratings": 0,
+          "num_ratings": 0,
+          "num_three_star_ratings": 0,
+          "num_two_star_ratings": 0
+        }
+      },
+      "release_date": "2025-07-02",
+      "runtime_length_min": 540,
+      "series": [
+        {
+          "asin": "B0CB11LYGJ",
+          "sequence": "3",
+          "title": "The Empyrean",
+          "url": "/pd/Empyrean-Audiobook/B0CB11LYGJ"
+        }
+      ],
+      "sku": "BK_GRPH_005198",
+      "sku_lite": "BK_GRPH_005198",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51I9Z8QbljL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51I9Z8QbljL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51I9Z8QbljL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51I9Z8QbljL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51I9Z8QbljL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBOnyx%20Storm%20%28Part%202%20of%202...,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBRebecca%20Yarros,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51I9Z8QbljL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAOnyx%20Storm%20%28Par...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Rebecca%20Yarros,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51I9Z8QbljL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51I9Z8QbljL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "The Empyrean, Book 3",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Onyx Storm (Part 2 of 2) (Dramatized Adaptation)"
+    }
+  ],
+  "response_groups": [
+    "product_desc",
+    "always-returned",
+    "contributors",
+    "reviews",
+    "series",
+    "price",
+    "media",
+    "category_ladders"
+  ],
+  "total_results": 73240
+}

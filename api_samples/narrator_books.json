@@ -1,0 +1,588 @@
+{
+  "product_filters": [],
+  "products": [
+    {
+      "asin": "B0DRPQFHHW",
+      "authors": [
+        {
+          "asin": "B01AIAVB0O",
+          "name": "Craig Alanson"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "MultiPartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": true,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-04-29",
+      "language": "english",
+      "merchandising_summary": "<p>Disaster. There was no other word to describe how Operation Olympic had changed in a flash from a triumph to the worst failure the Merry Band of Pirates had ever experienced. A failure that meant the fight was over. Unless the Pirates could perform a miracle, without Skippy.</p>",
+      "narrators": [
+        {
+          "name": "R.C. Bray"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 49.900001525878906,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 34.93000030517578,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51lJw-V9g8L._SL500_.jpg"
+      },
+      "publication_datetime": "2025-04-29T07:00:00Z",
+      "publication_name": "Expeditionary Force",
+      "publisher_name": "Podium Audio",
+      "release_date": "2025-04-29",
+      "runtime_length_min": 1166,
+      "series": [
+        {
+          "asin": "B01N9CUGHG",
+          "sequence": "18",
+          "title": "Expeditionary Force",
+          "url": "/pd/Expeditionary-Force-Audiobook/B01N9CUGHG"
+        }
+      ],
+      "sku": "BK_PODM_009377",
+      "sku_lite": "BK_PODM_009377",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51lJw-V9g8L._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51lJw-V9g8L.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51lJw-V9g8L._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51lJw-V9g8L._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51lJw-V9g8L.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBGateway,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBCraig%20Alanson,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51lJw-V9g8L.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAGateway,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Craig%20Alanson,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51lJw-V9g8L._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51lJw-V9g8L.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "Expeditionary Force, Book 18",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Gateway"
+    },
+    {
+      "asin": "B01M07UQNO",
+      "authors": [
+        {
+          "asin": "B00J0PLMJY",
+          "name": "Allen Eskens"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "format4",
+          "format": "Format4",
+          "is_kindle_enhanced": false,
+          "name": "format4"
+        },
+        {
+          "enhanced_codec": "mp42232",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "mp4_22_32"
+        },
+        {
+          "enhanced_codec": "piff2264",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "piff_22_64"
+        },
+        {
+          "enhanced_codec": "piff2232",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "piff_22_32"
+        },
+        {
+          "enhanced_codec": "mp42264",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "mp4_22_64"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "SinglePartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": false,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2016-10-04",
+      "language": "english",
+      "merchandising_summary": "<p>Detective Max Rupert's and attorney Boady Sanden's friendship is being pushed to the breaking point. Max is convinced that Jennavieve Pruitt was killed by her husband, Ben....</p>",
+      "narrators": [
+        {
+          "asin": "B0C9M7WJTJ",
+          "name": "David Colacci"
+        },
+        {
+          "asin": "B0C9M7XCR9",
+          "name": "Amy McFadden"
+        },
+        {
+          "name": "R.C. Bray"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 14.609999656677246,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 10.229999542236328,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/61dRHYEZFsL._SL500_.jpg"
+      },
+      "publication_datetime": "2016-10-04T07:00:00Z",
+      "publication_name": "Max Rupert and Boady Sanden",
+      "publisher_name": "Tantor Audio",
+      "release_date": "2016-10-04",
+      "runtime_length_min": 572,
+      "series": [
+        {
+          "asin": "B0874R3TDQ",
+          "sequence": "3",
+          "title": "Joe Talbert",
+          "url": "/pd/Joe-Talbert-Audiobook/B0874R3TDQ"
+        }
+      ],
+      "sku": "BK_TANT_006610",
+      "sku_lite": "BK_TANT_006610",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/61dRHYEZFsL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C61dRHYEZFsL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/61dRHYEZFsL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/61dRHYEZFsL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C61dRHYEZFsL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBThe%20Heavens%20May%20Fall,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBAllen%20Eskens,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C61dRHYEZFsL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAThe%20Heavens%20May...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Allen%20Eskens,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/61dRHYEZFsL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C61dRHYEZFsL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "thesaurus_subject_keywords": [
+        "la_confidential",
+        "literature-and-fiction"
+      ],
+      "title": "The Heavens May Fall"
+    },
+    {
+      "asin": "B0DKPH5RT9",
+      "authors": [
+        {
+          "asin": "B012DQ3BCM",
+          "name": "Jason Anspach"
+        },
+        {
+          "asin": "B00W2ZAK7E",
+          "name": "J.N. Chaney"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "MultiPartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": true,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2024-12-10",
+      "language": "english",
+      "merchandising_summary": "<p>Titus Briggs is an Earth Defense soldier, a grunt, a decorated war hero\u2014it's all he's ever known. So when a career-ending injury leaves him lying in a hospital bed, missing both legs, he struggles to accept his new reality. He can no longer walk, which means he can no longer fight.</p>",
+      "narrators": [
+        {
+          "name": "R.C. Bray"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 33.900001525878906,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 5.989999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "sale"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51FwHPcCMSL._SL500_.jpg"
+      },
+      "publication_datetime": "2024-12-10T08:00:00Z",
+      "publication_name": "Able Bodied Soldier",
+      "publisher_name": "Podium Audio",
+      "release_date": "2024-12-10",
+      "runtime_length_min": 767,
+      "series": [
+        {
+          "asin": "B0DKSWFYSG",
+          "sequence": "1",
+          "title": "Able Bodied Soldier",
+          "url": "/pd/Able-Bodied-Soldier-Audiobook/B0DKSWFYSG"
+        }
+      ],
+      "sku": "BK_PODM_008930",
+      "sku_lite": "BK_PODM_008930",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51FwHPcCMSL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51FwHPcCMSL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51FwHPcCMSL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51FwHPcCMSL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51FwHPcCMSL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBAble%20Bodied%20Soldier%201,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBJason%20Anspach%252C%20J.N.%20Chaney,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51FwHPcCMSL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZAAble%20Bodied%20Sol...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Jason%20Anspach%252C%20J.N...,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51FwHPcCMSL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51FwHPcCMSL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "Able Bodied Soldier, Book 1",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Able Bodied Soldier 1"
+    },
+    {
+      "asin": "B0D38CR7BR",
+      "authors": [
+        {
+          "asin": "B01AIAVB0O",
+          "name": "Craig Alanson"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "MultiPartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": true,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2024-09-10",
+      "language": "english",
+      "merchandising_summary": "<p>The Merry Band of Pirates stopped the enemy from stealing a Sentinel, and destroyed its Elder starship, so why weren\u2019t the Pirates planning a victory party?</p>",
+      "narrators": [
+        {
+          "name": "R.C. Bray"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 59.9900016784668,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 41.9900016784668,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51K-G5EL6NL._SL500_.jpg"
+      },
+      "publication_datetime": "2024-09-10T07:00:00Z",
+      "publication_name": "Expeditionary Force",
+      "publisher_name": "Podium Audio",
+      "release_date": "2024-09-10",
+      "runtime_length_min": 1329,
+      "series": [
+        {
+          "asin": "B01N9CUGHG",
+          "sequence": "17",
+          "title": "Expeditionary Force",
+          "url": "/pd/Expeditionary-Force-Audiobook/B01N9CUGHG"
+        }
+      ],
+      "sku": "BK_PODM_007664",
+      "sku_lite": "BK_PODM_007664",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51K-G5EL6NL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51K-G5EL6NL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51K-G5EL6NL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51K-G5EL6NL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51K-G5EL6NL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBTask%20Force%20Hammer,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBCraig%20Alanson,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51K-G5EL6NL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZATask%20Force%20Hammer,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Craig%20Alanson,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51K-G5EL6NL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51K-G5EL6NL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "Expeditionary Force, Book 17",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Task Force Hammer"
+    },
+    {
+      "asin": "B0DNTTXX1M",
+      "authors": [
+        {
+          "asin": "B06XY8PTYJ",
+          "name": "Joshua Gayou"
+        },
+        {
+          "asin": "B01MR1ZI49",
+          "name": "Devon C. Ford"
+        }
+      ],
+      "available_codecs": [
+        {
+          "enhanced_codec": "LC_64_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_64"
+        },
+        {
+          "enhanced_codec": "LC_32_22050_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_22_32"
+        },
+        {
+          "enhanced_codec": "LC_128_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_128"
+        },
+        {
+          "enhanced_codec": "LC_64_44100_stereo",
+          "format": "Enhanced",
+          "is_kindle_enhanced": true,
+          "name": "aax_44_64"
+        },
+        {
+          "enhanced_codec": "aax",
+          "format": "Enhanced",
+          "is_kindle_enhanced": false,
+          "name": "aax"
+        }
+      ],
+      "content_delivery_type": "MultiPartBook",
+      "content_type": "Product",
+      "format_type": "unabridged",
+      "has_children": true,
+      "is_adult_product": false,
+      "is_listenable": true,
+      "is_purchasability_suppressed": false,
+      "is_vvab": false,
+      "issue_date": "2025-05-06",
+      "language": "english",
+      "merchandising_summary": "<p>The hit Commune series is back with book seven! Rejoin some of your old favorites and plenty of unforgettable new ones on another deadly romp through post-apocalyptic America.</p>",
+      "narrators": [
+        {
+          "name": "R.C. Bray"
+        }
+      ],
+      "price": {
+        "credit_price": 1.0,
+        "list_price": {
+          "base": 49.9900016784668,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "list"
+        },
+        "lowest_price": {
+          "base": 34.9900016784668,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "member"
+        },
+        "ws4v_upsell_price": {
+          "base": 7.489999771118164,
+          "currency_code": "USD",
+          "merchant_id": "A2ZO8JX97D5MN9",
+          "type": "ws4v_upsell"
+        }
+      },
+      "product_images": {
+        "500": "https://m.media-amazon.com/images/I/51b7AFpeavL._SL500_.jpg"
+      },
+      "publication_datetime": "2025-05-06T07:00:00Z",
+      "publication_name": "Commune Series",
+      "publisher_name": "Podium Audio",
+      "release_date": "2025-05-06",
+      "runtime_length_min": 989,
+      "series": [
+        {
+          "asin": "B07BY6JB6F",
+          "sequence": "7",
+          "title": "Commune Series",
+          "url": "/pd/Commune-Series-Audiobook/B07BY6JB6F"
+        }
+      ],
+      "sku": "BK_PODM_009121",
+      "sku_lite": "BK_PODM_009121",
+      "social_media_images": {
+        "facebook": "https://m.media-amazon.com/images/I/51b7AFpeavL._SL10_UR1600,800_CR200,50,1200,630_CLa%7C1200,630%7C51b7AFpeavL.jpg%7C0,0,1200,630+82,82,465,465_PJAdblSocialShare-Gradientoverlay-largeasin-0to70,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Large,TopLeft,600,270_OU01_ZBLISTENING%20ON,617,216,52,500,AudibleSansMd,30,255,255,255.jpg",
+        "ig_bg": "https://m.media-amazon.com/images/I/51b7AFpeavL._SL200_BL80_UR1080,2160.jpg",
+        "ig_static_with_bg": "https://m.media-amazon.com/images/I/51b7AFpeavL._SL200_BL80_UR1080,2160_CLa%7C1080,2160%7C51b7AFpeavL.jpg%7C0,0,1080,2160+288,614,500,500_PJAdblSocialShare-Gradientoverlay-Radial,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Small,TopLeft,290,461_ZBLISTENING%20ON,290,410,52,500,AudibleSansMd,34,255,255,255_ZBCommune%207%3A%20Bloody%20Sun,290,1183,52,500,AudibleSansSm,32,255,255,255_ZBJoshua%20Gayou%252C%20Devon%20C.%20Ford,290,1247,52,500,AudibleSansRg,28,255,255,255.jpg",
+        "ig_sticker": "https://m.media-amazon.com/images/I/71UyRin7-TL._CLa%7C614,913%7C51b7AFpeavL.jpg%7C0,0,614,913+70,79,471,473_FMpng_PJAudible-logo-dk,BottomLeft,70,-100_ZACommune%207%3A%20Bloo...,70,560,65,500,AudibleSansSm,42,54,54,54_ZAby%20Joshua%20Gayou%252C%20Devo...,70,640,52,517,AudibleSansRg,32,0,0,0.png",
+        "twitter": "https://m.media-amazon.com/images/I/51b7AFpeavL._SL10_UR1600,800_CR200,50,1024,512_CLa%7C1024,512%7C51b7AFpeavL.jpg%7C0,0,1024,512+67,67,376,376_PJAdblSocialShare-Gradientoverlay-twitter-largeasin-0to60,TopLeft,0,0_PJAdblSocialShare-AudibleLogo-Medium,TopLeft,490,223_OU01_ZBLISTENING%20ON,483,152,55,450,AudibleSansMd,32,255,255,255.jpg"
+      },
+      "subtitle": "Commune, Book 7",
+      "thesaurus_subject_keywords": [
+        "literature-and-fiction"
+      ],
+      "title": "Commune 7: Bloody Sun"
+    }
+  ],
+  "response_groups": [
+    "product_desc",
+    "always-returned",
+    "contributors",
+    "series",
+    "price",
+    "media"
+  ],
+  "total_results": 450
+}

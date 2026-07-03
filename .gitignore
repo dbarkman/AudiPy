@@ -1,0 +1,44 @@
+# --- Secrets / credentials (never commit) ---
+.env
+.env.*
+!.env.example
+.audible_auth_cache
+*.auth_cache
+audible_auth*
+*.key
+*.pem
+secrets/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.python-version
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- uv ---
+# uv.lock IS committed (lockfile hygiene) — do not ignore it
+
+# --- Local data (single-user tool) ---
+*.sqlite
+*.sqlite3
+*.db
+audipy.db
+
+# --- Node / frontend (kept ignored in case a local web UI is added later) ---
+node_modules/
+dist/
+.vite/
+
+# --- OS / editor ---
+.DS_Store
+*.swp
+.idea/
+.vscode/
