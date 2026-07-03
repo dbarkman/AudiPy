@@ -41,3 +41,6 @@ dist/
 *.swp
 .idea/
 .vscode/
+
+# Generated report output (personal library data)
+reports/
