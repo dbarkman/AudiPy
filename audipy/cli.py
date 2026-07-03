@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import dataclasses
+from pathlib import Path
 
 import typer
 from rich.console import Console
 from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 
-from audipy import audible_client
+from audipy import audible_client, render
 from audipy import recommend as recommend_module
 from audipy import sync as sync_module
 from audipy.config import Config
@@ -117,6 +118,30 @@ def recommend(
         f"{counts['author']} author, {counts['narrator']} narrator recommendations."
     )
     console.print("[dim]Run [bold]audipy report[/] to see them.[/]")
+
+
+@app.command()
+def report(
+    rec_type: str = typer.Argument(
+        "all", help="Which list to show: series, author, narrator, or all."
+    ),
+    cash: bool = typer.Option(False, "--cash", help="Only show cash deals (under your max price)."),
+    save: bool = typer.Option(False, "--save", help="Also write text reports to ./reports/."),
+) -> None:
+    """Show your recommendations, grouped by series/author/narrator."""
+    config = Config.load()
+    if rec_type not in ("all", "series", "author", "narrator"):
+        console.print("[red]Type must be one of: series, author, narrator, all.[/]")
+        raise typer.Exit(code=1)
+    if not config.db_file.exists():
+        console.print("[yellow]No library synced yet.[/] Run [bold]audipy sync[/] first.")
+        raise typer.Exit(code=1)
+
+    render.print_report(config, console, rec_type=rec_type, cash_only=cash)
+
+    if save:
+        paths = render.save_reports(config, Path("reports"))
+        console.print(f"[green]💾 Wrote {len(paths)} reports to ./reports/[/]")
 
 
 @app.command()
