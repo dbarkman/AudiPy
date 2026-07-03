@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import re
 
+_APOSTROPHE = re.compile(r"['’]")  # straight + curly apostrophe
 _NON_ALNUM = re.compile(r"[^a-z0-9\s]")
 _WHITESPACE = re.compile(r"\s+")
 
@@ -27,7 +28,9 @@ def normalize_name(name: str | None) -> str:
     """
     if not name:
         return ""
-    text = _NON_ALNUM.sub(" ", name.lower())
+    # Drop apostrophes so "O'Brien" == "OBrien"; other punctuation becomes a
+    # space so initials separate before the single-letter merge below.
+    text = _NON_ALNUM.sub(" ", _APOSTROPHE.sub("", name.lower()))
     tokens = _WHITESPACE.sub(" ", text).strip().split(" ")
     if not tokens or tokens == [""]:
         return ""
@@ -51,7 +54,7 @@ def normalize_title(title: str | None) -> str:
     """Canonical key for a book title (for owned/duplicate detection)."""
     if not title:
         return ""
-    text = _NON_ALNUM.sub(" ", title.lower())
+    text = _NON_ALNUM.sub(" ", _APOSTROPHE.sub("", title.lower()))
     return _WHITESPACE.sub(" ", text).strip()
 
 
