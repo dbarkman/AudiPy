@@ -9,7 +9,7 @@ import typer
 from rich.console import Console
 from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 
-from audipy import audible_client, render
+from audipy import audible_client, catalog, render
 from audipy import recommend as recommend_module
 from audipy import sync as sync_module
 from audipy.config import Config
@@ -37,6 +37,27 @@ def login() -> None:
     console.print(f"[dim]Tokens cached at {config.auth_file}[/]")
     console.print("Verifying API access…")
     _report_library_size(config)
+
+
+@app.command(name="catalog")
+def catalog_cmd(
+    kind: str = typer.Argument(..., help="author, narrator or series"),
+    name: str = typer.Argument(..., help="The author, narrator or series name"),
+    limit: int = typer.Option(25, help="Most results to return (1-50)"),
+) -> None:
+    """Catalog titles for an author, narrator or series, newest first, as JSON. Read-only."""
+    import json
+
+    config = Config.load()
+    if not config.auth_file.exists():
+        typer.echo(json.dumps({"error": "not logged in"}))
+        raise typer.Exit(code=1)
+    try:
+        results = catalog.search(config, kind, name, limit=limit)
+    except ValueError as exc:
+        typer.echo(json.dumps({"error": str(exc)}))
+        raise typer.Exit(code=2) from exc
+    typer.echo(json.dumps({"kind": kind, "name": name, "results": results}, ensure_ascii=False))
 
 
 @app.command()

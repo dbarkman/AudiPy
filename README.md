@@ -45,6 +45,10 @@ uv run audipy report                 # all three lists
 uv run audipy report series          # just series continuations
 uv run audipy report author --cash   # only cash deals under your max price
 uv run audipy report --save          # also write text files to ./reports/
+
+# 5. Look up an author, narrator or series in the catalog, newest first (JSON, read-only).
+uv run audipy catalog author "Brandon Sanderson"
+uv run audipy catalog series "Stormlight Archive" --limit 10
 ```
 
 Other commands: `audipy status` (verify auth + library size) and

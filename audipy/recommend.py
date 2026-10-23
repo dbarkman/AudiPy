@@ -30,9 +30,9 @@ CATALOG_ENDPOINT = "1.0/catalog/products"
 # a single page at 50 for this endpoint.
 CATALOG_RESULTS = 50
 
-AUTHOR_GROUPS = "contributors,product_desc,media,price"
-NARRATOR_GROUPS = "contributors,product_desc,media,price"
-SERIES_GROUPS = "series,contributors,product_desc,media,price"
+AUTHOR_GROUPS = "contributors,product_desc,media,price,product_attrs"
+NARRATOR_GROUPS = "contributors,product_desc,media,price,product_attrs"
+SERIES_GROUPS = "series,contributors,product_desc,media,price,product_attrs"
 
 # Confidence per recommendation type (series continuations are the surest bet).
 CONFIDENCE = {"series": 1.0, "author": 0.8, "narrator": 0.6}
@@ -145,6 +145,7 @@ def _build_row(rec_type: str, source: Source, product: dict, config: Config,
         "language": (product.get("language") or "").lower() or None,
         "cover_url": None,
         "generated_at": generated_at,
+        "release_date": product.get("release_date") or product.get("issue_date"),
     }
 
 
@@ -153,18 +154,21 @@ def _store_rows(conn: sqlite3.Connection, rows: list[dict]) -> None:
         """INSERT INTO recommendations
            (rec_type, source_name, source_norm, asin, title, subtitle, series_title,
             sequence, sequence_num, author_names, narrator_names, member_price,
-            credit_price, purchase_method, confidence, language, cover_url, generated_at)
+            credit_price, purchase_method, confidence, language, cover_url, generated_at,
+            release_date)
            VALUES
            (:rec_type, :source_name, :source_norm, :asin, :title, :subtitle, :series_title,
             :sequence, :sequence_num, :author_names, :narrator_names, :member_price,
-            :credit_price, :purchase_method, :confidence, :language, :cover_url, :generated_at)
+            :credit_price, :purchase_method, :confidence, :language, :cover_url, :generated_at,
+            :release_date)
            ON CONFLICT(rec_type, asin, source_norm) DO UPDATE SET
             member_price = excluded.member_price,
             credit_price = excluded.credit_price,
             purchase_method = excluded.purchase_method,
             sequence = excluded.sequence,
             sequence_num = excluded.sequence_num,
-            generated_at = excluded.generated_at""",
+            generated_at = excluded.generated_at,
+            release_date = excluded.release_date""",
         rows,
     )
 

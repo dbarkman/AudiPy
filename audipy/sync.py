@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import html
+import re
 import sqlite3
 from datetime import datetime, timezone
 
@@ -10,8 +12,13 @@ from audipy.config import Config
 from audipy.db import connect, set_meta
 from audipy.normalize import normalize_name, normalize_title, parse_sequence
 
-# response_groups needed to capture contributors, series, media (covers) and price.
-LIBRARY_RESPONSE_GROUPS = "series,contributors,product_desc,media,price"
+# response_groups needed to capture contributors, series, media (covers), price, listening
+# progress, genres and ratings.
+LIBRARY_RESPONSE_GROUPS = (
+    "series,contributors,product_desc,media,price,"
+    "listening_status,is_finished,percent_complete,rating,category_ladders"
+)
+SUMMARY_CHARS = 1000
 
 
 def _largest_cover(product_images: dict | None) -> str | None:
@@ -24,6 +31,39 @@ def _largest_cover(product_images: dict | None) -> str | None:
     except (ValueError, TypeError):
         best = next(iter(product_images))
     return product_images.get(best)
+
+
+def _genres(item: dict) -> str | None:
+    ladders = [
+        " > ".join(step["name"] for step in (lad.get("ladder") or []) if step.get("name"))
+        for lad in (item.get("category_ladders") or [])
+    ]
+    return "; ".join(dict.fromkeys(l for l in ladders if l)) or None
+
+
+def _rating(item: dict) -> tuple[float | None, int | None]:
+    overall = (item.get("rating") or {}).get("overall_distribution") or {}
+    count = overall.get("num_ratings")
+    avg = overall.get("average_rating")
+    return (round(float(avg), 2) if avg else None, int(count) if count else None)
+
+
+def _summary(item: dict) -> str | None:
+    raw = item.get("merchandising_summary") or ""
+    text = html.unescape(re.sub(r"<[^>]+>", " ", raw))
+    return " ".join(text.split())[:SUMMARY_CHARS] or None
+
+
+def _progress(item: dict) -> dict:
+    status = item.get("listening_status") or {}
+    finished = item.get("is_finished", status.get("is_finished"))
+    percent = item.get("percent_complete", status.get("percent_complete"))
+    return {
+        "is_finished": None if finished is None else int(bool(finished)),
+        "percent_complete": percent,
+        "time_left_sec": status.get("time_remaining_seconds"),
+        "last_listened_at": status.get("finished_at_timestamp"),
+    }
 
 
 def parse_book(item: dict) -> dict | None:
@@ -68,6 +108,11 @@ def parse_book(item: dict) -> dict | None:
         "release_date": item.get("release_date") or item.get("issue_date"),
         "purchase_date": item.get("purchase_date"),
         "cover_url": _largest_cover(item.get("product_images")),
+        **_progress(item),
+        "genres": _genres(item),
+        "rating_avg": _rating(item)[0],
+        "rating_count": _rating(item)[1],
+        "summary": _summary(item),
         "authors": authors,
         "narrators": narrators,
         "series": series,
@@ -78,9 +123,13 @@ def _store_book(conn: sqlite3.Connection, book: dict, synced_at: str) -> None:
     conn.execute(
         """INSERT INTO books
            (asin, title, subtitle, title_norm, runtime_min, language,
-            release_date, purchase_date, cover_url, synced_at)
+            release_date, purchase_date, cover_url, synced_at,
+            is_finished, percent_complete, time_left_sec, last_listened_at,
+            genres, rating_avg, rating_count, summary)
            VALUES (:asin, :title, :subtitle, :title_norm, :runtime_min, :language,
-                   :release_date, :purchase_date, :cover_url, :synced_at)""",
+                   :release_date, :purchase_date, :cover_url, :synced_at,
+                   :is_finished, :percent_complete, :time_left_sec, :last_listened_at,
+                   :genres, :rating_avg, :rating_count, :summary)""",
         {**book, "synced_at": synced_at},
     )
     conn.executemany(

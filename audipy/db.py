@@ -24,7 +24,15 @@ CREATE TABLE IF NOT EXISTS books (
     release_date  TEXT,
     purchase_date TEXT,
     cover_url     TEXT,
-    synced_at     TEXT NOT NULL
+    synced_at     TEXT NOT NULL,
+    is_finished      INTEGER,               -- 1 finished, 0 not
+    percent_complete REAL,
+    time_left_sec    INTEGER,
+    last_listened_at TEXT,                  -- Audible's listening_status timestamp
+    genres           TEXT,                  -- "A > B > C; D > E", from category ladders
+    rating_avg       REAL,                  -- public overall rating, not David's own
+    rating_count     INTEGER,
+    summary          TEXT                   -- publisher's blurb, tags stripped
 );
 
 CREATE TABLE IF NOT EXISTS book_authors (
@@ -73,6 +81,7 @@ CREATE TABLE IF NOT EXISTS recommendations (
     language        TEXT,
     cover_url       TEXT,
     generated_at    TEXT NOT NULL,
+    release_date    TEXT,
     UNIQUE (rec_type, asin, source_norm)
 );
 
@@ -87,6 +96,26 @@ CREATE TABLE IF NOT EXISTS meta (
 """
 
 
+# Columns added after the first release. CREATE TABLE IF NOT EXISTS leaves an existing table alone,
+# so an old database gets them added here instead. Additive only: nothing is dropped or renamed.
+ADDED_COLUMNS = {
+    "books": {
+        "is_finished": "INTEGER", "percent_complete": "REAL", "time_left_sec": "INTEGER",
+        "last_listened_at": "TEXT", "genres": "TEXT", "rating_avg": "REAL",
+        "rating_count": "INTEGER", "summary": "TEXT",
+    },
+    "recommendations": {"release_date": "TEXT"},
+}
+
+
+def _add_missing_columns(conn: sqlite3.Connection) -> None:
+    for table, columns in ADDED_COLUMNS.items():
+        have = {r["name"] for r in conn.execute(f"PRAGMA table_info({table})")}
+        for name, kind in columns.items():
+            if name not in have:
+                conn.execute(f"ALTER TABLE {table} ADD COLUMN {name} {kind}")
+
+
 @contextmanager
 def connect(db_path: Path) -> Iterator[sqlite3.Connection]:
     """Open the SQLite database, ensuring the schema exists.
@@ -98,6 +127,7 @@ def connect(db_path: Path) -> Iterator[sqlite3.Connection]:
     conn.execute("PRAGMA foreign_keys = ON")
     try:
         conn.executescript(SCHEMA)
+        _add_missing_columns(conn)
         yield conn
         conn.commit()
     except Exception:
